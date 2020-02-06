@@ -69,7 +69,7 @@ namespace ProjektPaint
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOpen.ForeColor = System.Drawing.Color.GreenYellow;
-            this.btnOpen.Image = global::ProjektPaint.Properties.Resources.Open_Folder_WF;
+            this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
             this.btnOpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpen.Location = new System.Drawing.Point(140, 162);
             this.btnOpen.Name = "btnOpen";
@@ -88,7 +88,7 @@ namespace ProjektPaint
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.GreenYellow;
-            this.btnNew.Image = global::ProjektPaint.Properties.Resources.Document_Add_01;
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNew.Location = new System.Drawing.Point(13, 162);
             this.btnNew.Name = "btnNew";
@@ -110,7 +110,6 @@ namespace ProjektPaint
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint v.1.0 - Startmenü";

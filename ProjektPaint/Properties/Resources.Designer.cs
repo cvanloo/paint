@@ -62,42 +62,49 @@ namespace ProjektPaint.Properties {
         
         internal static System.Drawing.Bitmap Close_WF {
             get {
-                object obj = ResourceManager.GetObject("Close-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Close_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Data_Export {
+        internal static System.Drawing.Icon Data_Export {
             get {
-                object obj = ResourceManager.GetObject("Data-Export", resourceCulture);
+                object obj = ResourceManager.GetObject("Data_Export", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Data_Export1 {
+            get {
+                object obj = ResourceManager.GetObject("Data_Export1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Document_Add_01 {
+        internal static System.Drawing.Bitmap Document_Add_011 {
             get {
-                object obj = ResourceManager.GetObject("Document-Add-01", resourceCulture);
+                object obj = ResourceManager.GetObject("Document-Add-011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap dots_horizontal {
             get {
-                object obj = ResourceManager.GetObject("dots-horizontal", resourceCulture);
+                object obj = ResourceManager.GetObject("dots_horizontal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap dots_horizontal_1_ {
             get {
-                object obj = ResourceManager.GetObject("dots-horizontal(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("dots_horizontal_1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap dots_horizontal_2_ {
             get {
-                object obj = ResourceManager.GetObject("dots-horizontal(2)", resourceCulture);
+                object obj = ResourceManager.GetObject("dots_horizontal_2_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -109,30 +116,30 @@ namespace ProjektPaint.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Editor1 {
+            get {
+                object obj = ResourceManager.GetObject("Editor1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Ellipse_Selection_WF {
             get {
-                object obj = ResourceManager.GetObject("Ellipse Selection-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Ellipse_Selection_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap File_Format_BitMap {
+        internal static System.Drawing.Bitmap File_Format_BitMap1 {
             get {
-                object obj = ResourceManager.GetObject("File-Format-BitMap", resourceCulture);
+                object obj = ResourceManager.GetObject("File-Format-BitMap1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap File_Format_JPEG {
+        internal static System.Drawing.Bitmap File_Format_JPEG1 {
             get {
-                object obj = ResourceManager.GetObject("File-Format-JPEG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap File_Format_PNG {
-            get {
-                object obj = ResourceManager.GetObject("File-Format-PNG", resourceCulture);
+                object obj = ResourceManager.GetObject("File-Format-JPEG1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,14 +153,21 @@ namespace ProjektPaint.Properties {
         
         internal static System.Drawing.Bitmap format_color_fill {
             get {
-                object obj = ResourceManager.GetObject("format-color-fill", resourceCulture);
+                object obj = ResourceManager.GetObject("format_color_fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Image1 {
+            get {
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap location_enter_1_ {
             get {
-                object obj = ResourceManager.GetObject("location-enter(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("location_enter_1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,14 +181,21 @@ namespace ProjektPaint.Properties {
         
         internal static System.Drawing.Bitmap menu_1_ {
             get {
-                object obj = ResourceManager.GetObject("menu(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap menu_2_ {
             get {
-                object obj = ResourceManager.GetObject("menu(2)", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_2_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap menu1 {
+            get {
+                object obj = ResourceManager.GetObject("menu1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -188,7 +209,14 @@ namespace ProjektPaint.Properties {
         
         internal static System.Drawing.Bitmap minus_1_ {
             get {
-                object obj = ResourceManager.GetObject("minus(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("minus_1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap minus1 {
+            get {
+                object obj = ResourceManager.GetObject("minus1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -200,51 +228,65 @@ namespace ProjektPaint.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Open_Folder_WF {
+        internal static System.Drawing.Bitmap Open_Folder_WF1 {
             get {
-                object obj = ResourceManager.GetObject("Open Folder-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Open Folder-WF1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Pen_Line__WF {
             get {
-                object obj = ResourceManager.GetObject("Pen Line -WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Pen_Line__WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap pencil_remove {
             get {
-                object obj = ResourceManager.GetObject("pencil-remove", resourceCulture);
+                object obj = ResourceManager.GetObject("pencil_remove", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Pencil_WF {
             get {
-                object obj = ResourceManager.GetObject("Pencil-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Pencil_WF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon Quill_03 {
+            get {
+                object obj = ResourceManager.GetObject("Quill_03", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Quill_031 {
+            get {
+                object obj = ResourceManager.GetObject("Quill_031", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap ray_start_arrow {
             get {
-                object obj = ResourceManager.GetObject("ray-start-arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("ray_start_arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap rectangle_outline {
             get {
-                object obj = ResourceManager.GetObject("rectangle-outline", resourceCulture);
+                object obj = ResourceManager.GetObject("rectangle_outline", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Rectangle_WF {
             get {
-                object obj = ResourceManager.GetObject("Rectangle-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Rectangle_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -256,65 +298,79 @@ namespace ProjektPaint.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap redo1 {
+            get {
+                object obj = ResourceManager.GetObject("redo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap shape_circle_plus {
             get {
-                object obj = ResourceManager.GetObject("shape-circle-plus", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_circle_plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Shape_Circle_WF {
             get {
-                object obj = ResourceManager.GetObject("Shape Circle-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Shape_Circle_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap shape_rectangle_plus {
             get {
-                object obj = ResourceManager.GetObject("shape-rectangle-plus", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_rectangle_plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Shape_Square_2_WF {
             get {
-                object obj = ResourceManager.GetObject("Shape Square 2-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Shape_Square_2_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap shape_square_plus {
             get {
-                object obj = ResourceManager.GetObject("shape-square-plus", resourceCulture);
+                object obj = ResourceManager.GetObject("shape_square_plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Shape18_WF {
             get {
-                object obj = ResourceManager.GetObject("Shape18-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Shape18_WF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap startbild {
+            get {
+                object obj = ResourceManager.GetObject("startbild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap Stationary_02_WF {
             get {
-                object obj = ResourceManager.GetObject("Stationary-02-WF", resourceCulture);
+                object obj = ResourceManager.GetObject("Stationary_02_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap trash_can {
             get {
-                object obj = ResourceManager.GetObject("trash-can", resourceCulture);
+                object obj = ResourceManager.GetObject("trash_can", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap trash_can_1_ {
             get {
-                object obj = ResourceManager.GetObject("trash-can(1)", resourceCulture);
+                object obj = ResourceManager.GetObject("trash_can_1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,9 +382,16 @@ namespace ProjektPaint.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap undo1 {
+            get {
+                object obj = ResourceManager.GetObject("undo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap vector_ellipse {
             get {
-                object obj = ResourceManager.GetObject("vector-ellipse", resourceCulture);
+                object obj = ResourceManager.GetObject("vector_ellipse", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

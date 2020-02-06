@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ProjektPaint.Model;
 using System.IO;
+using ProjektPaint.Properties;
 
 namespace ProjektPaint
 {
@@ -73,9 +74,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            string strFile = Directory.GetCurrentDirectory() + @"\startbild.bmp";
-
-            Image img = Image.FromFile(strFile);
+            Image img = Resources.startbild;
             Graphics graphics = Graphics.FromImage(img);
             e.Graphics.DrawImage(img, 0, 0);
         }

@@ -118,121 +118,178 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Stationary-02-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Stationary-02-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trash_can_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-can(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="format-color-fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\format-color-fill.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pencil_remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil-remove.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shape18-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Shape18-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="location_enter_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\location-enter(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Document_Add_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Document-Add-01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shape-rectangle-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shape-rectangle-plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="File_Format_JPEG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-JPEG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quill_031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quill-03.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="redo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\redo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="trash-can(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash-can(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pencil-remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pencil-remove.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ray_start_arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ray-start-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dots_horizontal_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dots-horizontal(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shape_rectangle_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape-rectangle-plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Rectangle_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rectangle-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="File-Format-JPEG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\File-Format-JPEG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\File-Format-JPEG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Data-Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Data-Export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trash_can" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash-can.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File-Format-JPEG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-JPEG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="File-Format-PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\File-Format-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\File-Format-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Document-Add-01" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Document-Add-01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Document-Add-01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shape-circle-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shape-circle-plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Data_Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Export.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="File-Format-PNG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\File-Format-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="location-enter(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\location-enter(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Editor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pen_Line__WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pen Line -WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minus_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_Format_BitMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-BitMap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="undo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\undo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pencil_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pencil-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Quill_03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Quill-03.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minus(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="format_color_fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\format-color-fill.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rectangle-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Rectangle-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Open Folder-WF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open Folder-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Close-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shape18_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shape18-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Document-Add-011" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Document-Add-01.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dots-horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dots-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ellipse_Selection_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ellipse Selection-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="vector-ellipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vector-ellipse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Open Folder-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Open Folder-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Shape Circle-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Shape Circle-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pencil-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Pencil-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trash-can" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\trash-can.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shape-square-plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="shape_square_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shape-square-plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dots-horizontal(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dots-horizontal(2).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Open Folder-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open Folder-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ellipse Selection-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Ellipse Selection-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Shape_Square_2_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shape Square 2-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shape Square 2-WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Shape Square 2-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="startbild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\startbild.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="File-Format-BitMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\File-Format-BitMap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="redo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\redo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ray-start-arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ray-start-arrow.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="menu(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Close_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shape_circle_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape-circle-plus.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Data_Export1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Export.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shape_Circle_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shape Circle-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vector_ellipse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vector-ellipse.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dots_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dots-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Editor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Editor.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File_Format_PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu(2).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rectangle-outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="File-Format-PNG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-PNG.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rectangle_outline" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rectangle-outline.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dots-horizontal(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\dots-horizontal(1).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dots_horizontal_2_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dots-horizontal(2).png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pen Line -WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pictures\Pen Line -WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stationary_02_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stationary-02-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Open_Folder_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Open Folder-WF.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File-Format-BitMap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-BitMap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="File-Format-BitMap1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\File-Format-BitMap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -105,9 +105,9 @@
             // 
             // btnBmp
             // 
-            this.btnBmp.BackgroundImage = global::ProjektPaint.Properties.Resources.File_Format_BitMap;
             this.btnBmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBmp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBmp.Image = global::ProjektPaint.Properties.Resources.File_Format_BitMap1;
             this.btnBmp.Location = new System.Drawing.Point(194, 140);
             this.btnBmp.Name = "btnBmp";
             this.btnBmp.Size = new System.Drawing.Size(47, 52);
@@ -117,9 +117,9 @@
             // 
             // btnJpeg
             // 
-            this.btnJpeg.BackgroundImage = global::ProjektPaint.Properties.Resources.File_Format_JPEG;
             this.btnJpeg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnJpeg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnJpeg.Image = global::ProjektPaint.Properties.Resources.File_Format_JPEG1;
             this.btnJpeg.Location = new System.Drawing.Point(194, 76);
             this.btnJpeg.Name = "btnJpeg";
             this.btnJpeg.Size = new System.Drawing.Size(45, 49);
@@ -129,9 +129,9 @@
             // 
             // btnPng
             // 
-            this.btnPng.BackgroundImage = global::ProjektPaint.Properties.Resources.File_Format_PNG1;
             this.btnPng.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnPng.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPng.Image = ((System.Drawing.Image)(resources.GetObject("btnPng.Image")));
             this.btnPng.Location = new System.Drawing.Point(196, 12);
             this.btnPng.Name = "btnPng";
             this.btnPng.Size = new System.Drawing.Size(45, 58);
@@ -144,7 +144,7 @@
             this.pbExportIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbExportIcon.Image = global::ProjektPaint.Properties.Resources.Data_Export;
+            this.pbExportIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbExportIcon.Image")));
             this.pbExportIcon.Location = new System.Drawing.Point(46, 41);
             this.pbExportIcon.Name = "pbExportIcon";
             this.pbExportIcon.Size = new System.Drawing.Size(132, 132);

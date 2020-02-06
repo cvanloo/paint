@@ -87,6 +87,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStart.resx">
       <DependentUpon>FormStart.cs</DependentUpon>
@@ -179,52 +180,37 @@
     <None Include="Resources\trash-can%281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Data-Export.png" />
+    <None Include="Resources\Document-Add-01.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Document-Add-01.png" />
+    <None Include="Resources\Open Folder-WF.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Open.png" />
+    <None Include="Resources\Close-WF.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Close-WF.png" />
+    <None Include="Resources\File-Format-JPEG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Open Folder-WF.png" />
+    <None Include="Resources\File-Format-BitMap.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pictures\Pencil-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Stationary-02-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Rectangle-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Shape Square 2-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Ellipse Selection-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Shape18-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Shape Circle-WF.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\File-Format-PNG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\File-Format-JPEG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\File-Format-BitMap.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pictures\Pen Line -WF.png" />
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\Ellipse Selection-WF.png" />
+    <None Include="Resources\File-Format-PNG.png" />
+    <None Include="Resources\Open.png" />
+    <None Include="Resources\Pen Line -WF.png" />
+    <None Include="Resources\Pencil-WF.png" />
+    <None Include="Resources\Quill-03.ico" />
+    <None Include="Resources\Quill-03.png" />
+    <None Include="Resources\Rectangle-WF.png" />
+    <None Include="Resources\Shape Circle-WF.png" />
+    <None Include="Resources\Shape Square 2-WF.png" />
+    <None Include="Resources\Shape18-WF.png" />
+    <None Include="Resources\Data-Export.ico" />
+    <None Include="Resources\Data-Export.png" />
+    <Content Include="Resources\startbild.bmp" />
+    <None Include="Resources\Stationary-02-WF.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

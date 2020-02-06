@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEB9B688-DE4F-41F9-8EC2-5176F3C505D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjektPaint</RootNamespace>
+    <AssemblyName>ProjektPaint</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportForm.Designer.cs">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\FileOp.cs" />
+    <Compile Include="FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ImageDrawing.cs">
+    </Compile>
+    <Compile Include="Model\Circle.cs" />
+    <Compile Include="Model\Ellipse.cs" />
+    <Compile Include="Model\Enums\DashType.cs" />
+    <Compile Include="Model\Enums\DrawShape.cs" />
+    <Compile Include="Model\Shape.cs" />
+    <Compile Include="Model\Shape2d.cs" />
+    <Compile Include="Model\Freehand.cs" />
+    <Compile Include="Model\Line.cs" />
+    <Compile Include="Model\Square.cs" />
+    <Compile Include="Model\Rectangle.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ExportForm.resx">
+      <DependentUpon>ExportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rectangle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape-rectangle-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ray-start-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape-circle-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vector-ellipse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shape-square-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots-horizontal%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots-horizontal%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location-enter%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\format-color-fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-can%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Data-Export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Document-Add-01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Close-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Open Folder-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Pencil-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Stationary-02-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Rectangle-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Shape Square 2-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Ellipse Selection-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Shape18-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Shape Circle-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\File-Format-PNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\File-Format-JPEG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\File-Format-BitMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pictures\Pen Line -WF.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

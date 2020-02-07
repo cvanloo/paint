@@ -47,8 +47,6 @@ namespace ProjektPaint.Model
             string data = this.GetType().Name + ";";
             data += this.FormThickness + ";";
             data += this.Color.ToArgb() + ";";
-            data += this.StartPoint.X + ";";
-            data += this.StartPoint.Y + ";";
             data += this.Pattern + ";";
 
             foreach (Point p in this.Points)

@@ -18,114 +18,74 @@ namespace ProjektPaint
         /// <summary>
         /// Liest ein Bild ein
         /// </summary>
-        /// <param name="lForm">Die Shapes aus dem neuen Bild werden darin gespeichert</param>
-        /// <param name="path">Pfad von dem zu öffnenden Bild</param>
-        /// <returns>Gibt den Pfad oder null zurück</returns>
+        /// <param name="lForm">Die Formen werden darin gespeichert</param>
+        /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
+        /// <returns></returns>
         public bool OpenFile(ref List<Shape> lForm, string path)
         {
-            List<Shape> newForm = new List<Shape>();
-
             string[] fileText = File.ReadAllLines(path);
+            List<Shape> newForms = new List<Shape>();
 
-            //Das 2-Dimensionale Array shapes wird so gross deklariert wie mindestens nötig
-            //um alle Formen richtig darin speichern zu können
-
-            //Grösste Anzahl Daten in einem String suchen
-            int longestDimension = 0;
             foreach (string str in fileText)
             {
-                int sem = 0;
+                int length = 0;
+                foreach(char cVar in str)
+                {
+                    if(cVar == ';')
+                    {
+                        length++;
+                    }
+                }
+
+                string[] strValue = new string[length];
+                int index = 0;
+
                 foreach (char cVar in str)
                 {
-                    if (cVar == ';')
+                    if (cVar != ';')
                     {
-                        sem++;
+                        strValue[index] += cVar;
+                    }
+                    else
+                    {
+                        index++;
                     }
                 }
 
-                if (sem > longestDimension)
+                Shape shape = null;
+
+                switch (strValue[0])
                 {
-                    longestDimension = sem;
+                    case "Freehand":
+                        List<Point> lPoints = new List<Point>();
+                        for (int i = 4; i < strValue.Length; i++)
+                        {
+                            lPoints.Add(new Point(Convert.ToInt32(strValue[i++]), Convert.ToInt32(strValue[i])));
+                        }
+
+                        shape = new Freehand(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), getDashType(strValue[3]), lPoints);
+                        break;
+                    case "Line":
+                        shape = new Line(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), new Point(Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7])), getDashType(strValue[5]));
+                        break;
+                    case "Rectangle":
+                        shape = new ProjektPaint.Model.Rectangle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
+                        break;
+                    case "Square":
+                        shape = new Square(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
+                        break;
+                    case "Ellipse":
+                        shape = new Ellipse(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
+                        break;
+                    case "Circle":
+                        shape = new Circle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
+                        break;
                 }
+
+                newForms.Add(shape);
             }
 
-            string[,] shapes = new string[fileText.Length, longestDimension+1];
-            
-            try
-            {
-                //Eingelesene Datein an richtige Position in shapes kopieren
-                for(int i = 0; i < fileText.Length; i++)
-                {
-                    string value = "";
-                    int j = 0;
-
-                    foreach (char cVar in fileText[i])
-                    {
-                        if (cVar != ';')
-                        {
-                            value += cVar;
-                        }
-                        else
-                        {
-                            shapes[i, j] = value;
-
-                            value = "";
-                            j++;
-                        }
-                    }
-                }
-
-                //Shapes erstellen und zur Form-Liste hinzufügen
-                for (int i = 0; i < fileText.Length; i++)
-                {
-                    Shape shape = null;
-                    string type = shapes[i, 0];
-
-                    List<Point> Points = new List<Point>();
-
-                    if (type == "Freehand")
-                    {
-                        int j = 6;
-                        while (shapes[i, j] != null)
-                        {
-                            Points.Add(new Point(Convert.ToInt32(shapes[i, j++]), Convert.ToInt32(shapes[i, j++])));
-                        }
-                    }
-
-                    switch (type)
-                    {
-                        case "Rectangle":
-                            shape = new ProjektPaint.Model.Rectangle(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), new Point(Convert.ToInt32(shapes[i, 3]), Convert.ToInt32(shapes[i, 4])), getDashType(shapes[i, 5]), Convert.ToInt32(shapes[i, 6]), Convert.ToInt32(shapes[i, 7]), Color.FromArgb(Convert.ToInt32(shapes[i, 8])), Color.FromArgb(Convert.ToInt32(shapes[i, 9])), Color.FromArgb(Convert.ToInt32(shapes[i, 10])), Convert.ToInt32(shapes[i, 11]));
-                            break;
-                        case "Line":
-                            shape = new ProjektPaint.Model.Line(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), new Point(Convert.ToInt32(shapes[i, 3]), Convert.ToInt32(shapes[i, 4])), new Point(Convert.ToInt32(shapes[i, 6]), Convert.ToInt32(shapes[i, 7])), getDashType(shapes[i, 5]));
-                            break;
-                        case "Circle":
-                            shape = new ProjektPaint.Model.Circle(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), new Point(Convert.ToInt32(shapes[i, 3]), Convert.ToInt32(shapes[i, 4])), getDashType(shapes[i, 5]), Convert.ToInt32(shapes[i, 6]), Color.FromArgb(Convert.ToInt32(shapes[i, 7])), Color.FromArgb(Convert.ToInt32(shapes[i, 8])), Color.FromArgb(Convert.ToInt32(shapes[i, 9])), Convert.ToInt32(shapes[i, 10]));
-                            break;
-                        case "Square":
-                            shape = new ProjektPaint.Model.Square(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), new Point(Convert.ToInt32(shapes[i, 3]), Convert.ToInt32(shapes[i, 4])), getDashType(shapes[i, 5]), Convert.ToInt32(shapes[i, 6]), Color.FromArgb(Convert.ToInt32(shapes[i, 7])), Color.FromArgb(Convert.ToInt32(shapes[i, 8])), Color.FromArgb(Convert.ToInt32(shapes[i, 9])), Convert.ToInt32(shapes[i, 10]));
-                            break;
-                        case "Freehand":
-                            shape = new ProjektPaint.Model.Freehand(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), getDashType(shapes[i, 5]), Points);
-                            break;
-                        case "Ellipse":
-                            shape = new ProjektPaint.Model.Ellipse(Convert.ToInt32(shapes[i, 1]), Color.FromArgb(Convert.ToInt32(shapes[i, 2])), new Point(Convert.ToInt32(shapes[i, 3]), Convert.ToInt32(shapes[i, 4])), getDashType(shapes[i, 5]), Convert.ToInt32(shapes[i, 6]), Convert.ToInt32(shapes[i, 7]), Color.FromArgb(Convert.ToInt32(shapes[i, 8])), Color.FromArgb(Convert.ToInt32(shapes[i, 9])), Color.FromArgb(Convert.ToInt32(shapes[i, 10])), Convert.ToInt32(shapes[i, 11]));
-                            break;
-                    }
-
-                    newForm.Add(shape);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                return false;
-            }
-
-            lForm = newForm;
-
+            lForm = newForms;
             return true;
         }
 

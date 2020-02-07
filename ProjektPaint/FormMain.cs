@@ -708,6 +708,8 @@ namespace ProjektPaint
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+                File.Create(sfd.FileName).Close();
+
                 bool succeed = fop.SaveFile(listForms, sfd.FileName);
 
                 if (succeed)

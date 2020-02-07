@@ -160,11 +160,16 @@ namespace ProjektPaint
         {
             if (File.Exists(path))
             {
-                string[] TextToWrite = new string[FormsToSave.Count];
+                string[] fileText = AllFormInfos(FormsToSave);
 
-                AllFormInfos(ref TextToWrite, FormsToSave);
-
-                File.WriteAllLines(path, TextToWrite);
+                try
+                {
+                    File.WriteAllLines(path, fileText);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Fehler beim Speichern der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
+                }
             }
             else
             {
@@ -179,49 +184,16 @@ namespace ProjektPaint
         /// </summary>
         /// <param name="toWriteText">Alle abzuspeichernden Daten werden darin gespeichert</param>
         /// <param name="toSaveForms">Beinhaltet alle Formen die abgespeichert werden sollen</param>
-        private void AllFormInfos(ref string[] toWriteText, List<Shape> toSaveForms)
+        private string[] AllFormInfos(List<Shape> toSaveForms)
         {
+            string[] toWriteText = new string[toSaveForms.Count];
+
             for (int i = 0; i < toWriteText.Length; i++)
             {
-                string type = toSaveForms[i].GetType().Name;
-
-                if (type == "Rectangle")
-                {
-                    ProjektPaint.Model.Rectangle rect = (ProjektPaint.Model.Rectangle)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = rect.ConvertDataToString();
-                }
-                else if (type.ToString() == "Line")
-                {
-                    ProjektPaint.Model.Line line = (ProjektPaint.Model.Line)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = line.ConvertDataToString();
-                }
-                else if (type.ToString() == "Circle")
-                {
-                    ProjektPaint.Model.Circle circle = (ProjektPaint.Model.Circle)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = circle.ConvertDataToString();
-                }
-                else if (type.ToString() == "Square")
-                {
-                    ProjektPaint.Model.Square square = (ProjektPaint.Model.Square)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = square.ConvertDataToString(); 
-                }
-                else if (type.ToString() == "Freehand")
-                {
-                    ProjektPaint.Model.Freehand freehand = (ProjektPaint.Model.Freehand)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = freehand.ConvertDataToString();   
-                }
-                else if (type.ToString() == "Ellipse")
-                {
-                    ProjektPaint.Model.Ellipse ellipse = (ProjektPaint.Model.Ellipse)toSaveForms.ElementAt(i);
-
-                    toWriteText[i] = ellipse.ConvertDataToString();
-                }
+                toWriteText[i] = toSaveForms[i].ConvertDataToString();
             }
+
+            return toWriteText;
         }
 
         /// <summary>

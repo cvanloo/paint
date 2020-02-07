@@ -589,6 +589,10 @@ namespace ProjektPaint
             this.tsmiStartmenue.Text = "Startmenü";
             this.tsmiStartmenue.Click += new System.EventHandler(this.tsmiStartmenue_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutomaticDelay = 250;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

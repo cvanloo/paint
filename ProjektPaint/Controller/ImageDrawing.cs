@@ -31,53 +31,9 @@ namespace ProjektPaint
             //Bild leeren
             Grphx.FillRectangle(Brushes.White, 0, 0, SplitCon.Panel2.Width, SplitCon.Panel2.Height);
 
-            for (int index = 0; index < fElement.Count; index++)
+            for (int i = 0; i < fElement.Count; i++)
             {
-                //Typ des Form-Elementes herausfinden
-                Type type = fElement.ElementAt(index).GetType();
-
-                if (type.ToString() == "ProjektPaint.Model.Freehand")
-                {
-                    //Element in eine Freihandzeichnung casten
-                    ProjektPaint.Model.Freehand freehand = (ProjektPaint.Model.Freehand)fElement.ElementAt(index);
-
-                    freehand.Draw(Grphx);
-                }
-                else if (type.ToString() == "ProjektPaint.Model.Line")
-                {
-                    //Element in eine Linie casten
-                    ProjektPaint.Model.Line line = (ProjektPaint.Model.Line)fElement.ElementAt(index);
-
-                    line.Draw(Grphx);
-                }
-                else if (type.ToString() == "ProjektPaint.Model.Rectangle")
-                {
-                    //Element in ein Rechteck casten
-                    ProjektPaint.Model.Rectangle rect = (ProjektPaint.Model.Rectangle)fElement.ElementAt(index);
-
-                    rect.Draw(Grphx);
-                }
-                else if (type.ToString() == "ProjektPaint.Model.Square")
-                {
-                    //Element in ein Quadrat casten
-                    ProjektPaint.Model.Square rect = (ProjektPaint.Model.Square)fElement.ElementAt(index);
-
-                    rect.Draw(Grphx);
-                }
-                else if (type.ToString() == "ProjektPaint.Model.Ellipse")  //Element ist eine Ellipse
-                {
-                    //Element in eine Ellipse casten
-                    ProjektPaint.Model.Ellipse ellipse = (ProjektPaint.Model.Ellipse)fElement.ElementAt(index);
-
-                    ellipse.Draw(Grphx);
-                }
-                else if (type.ToString() == "ProjektPaint.Model.Circle")
-                {
-                    //Element in einen Kreis casten
-                    ProjektPaint.Model.Circle circle = (ProjektPaint.Model.Circle)fElement.ElementAt(index);
-
-                    circle.Draw(Grphx);
-                }
+                fElement.ElementAt(i).Draw(Grphx);
             }
 
             //Bitmap neu zeichnen

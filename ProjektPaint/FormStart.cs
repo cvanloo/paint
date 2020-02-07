@@ -56,11 +56,11 @@ namespace ProjektPaint
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                string newPath = fop.OpenFile(ref lForm, ofd.FileName);
+                bool succeed = fop.OpenFile(ref lForm, ofd.FileName);
 
-                if (newPath != null)
+                if (succeed)
                 {
-                    FormMain Main = new FormMain(newPath, lForm);
+                    FormMain Main = new FormMain(ofd.FileName, lForm);
                     Main.Show();
                     this.Dispose();
                 }

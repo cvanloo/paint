@@ -21,7 +21,7 @@ namespace ProjektPaint
         /// <param name="lForm">Die Shapes aus dem neuen Bild werden darin gespeichert</param>
         /// <param name="path">Pfad von dem zu öffnenden Bild</param>
         /// <returns>Gibt den Pfad oder null zurück</returns>
-        public string OpenFile(ref List<Shape> lForm, string path)
+        public bool OpenFile(ref List<Shape> lForm, string path)
         {
             List<Shape> newForm = new List<Shape>();
 
@@ -121,12 +121,12 @@ namespace ProjektPaint
             {
                 MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
 
-                return null;
+                return false;
             }
 
             lForm = newForm;
 
-            return path;
+            return true;
         }
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace ProjektPaint
         /// <param name="toSaveForms">Beinhaltet alle zu speichernden Formen</param>
         /// <param name="path">Pfad an dem das Bild gespeichert wird</param>
         /// <returns>Gibt den Speicherort oder null zurück</returns>
-        public string SaveFile(List<Shape> FormsToSave, string path)
+        public bool SaveFile(List<Shape> FormsToSave, string path)
         {
             if (File.Exists(path))
             {
@@ -173,10 +173,10 @@ namespace ProjektPaint
             }
             else
             {
-                return null;
+                return false;
             }
 
-            return path;
+            return true;
         }
 
         /// <summary>

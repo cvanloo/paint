@@ -684,17 +684,17 @@ namespace ProjektPaint
         /// </summary>
         private void SaveFile()
         {
-            path = fop.SaveFile(listForms, path);
+            bool succeed = fop.SaveFile(listForms, path);
 
-            if (path == null)
-            {
-                //Speichern Unter aufrufen
-                SaveUnderFile();
-            }
-            else
+            if (succeed)
             {
                 isSaved = true;
                 labelisSave.Text = "Gespeichert";
+            }
+            else
+            {
+                //Speichern Unter aufrufen
+                SaveUnderFile();
             }
         }
 
@@ -708,10 +708,14 @@ namespace ProjektPaint
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                path = fop.SaveFile(listForms, sfd.FileName);
+                bool succeed = fop.SaveFile(listForms, sfd.FileName);
 
-                isSaved = true;
-                labelisSave.Text = "Gespeichert";
+                if (succeed)
+                {
+                    path = sfd.FileName;
+                    isSaved = true;
+                    labelisSave.Text = "Gespeichert";
+                }
             }
         }
 
@@ -745,10 +749,14 @@ namespace ProjektPaint
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    path = fop.OpenFile(ref listForms, ofd.FileName);
+                    bool succeed = fop.OpenFile(ref listForms, ofd.FileName);
 
-                    isSaved = true;
-                    labelisSave.Text = "Keine Änderungen";
+                    if (succeed)
+                    {
+                        path = ofd.FileName;
+                        isSaved = true;
+                        labelisSave.Text = "Keine Änderungen";
+                    }
                 }
             }
         }

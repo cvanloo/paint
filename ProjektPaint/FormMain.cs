@@ -213,14 +213,11 @@ namespace ProjektPaint
                 //Form ist eine Freihandzeichnung
                 freehandPoints.Add(ePoint);
 
-                //Punkte müssen über einen Array in eine andere Liste kopiert werden, damit nicht mehr die gleiche Adresse referenziert wird
                 List<Point> ownPoints = new List<Point>();
-                Point[] copyArr = new Point[freehandPoints.Count];
-                freehandPoints.CopyTo(copyArr);
 
-                for (int i = 0; i < copyArr.Length; i++)
+                for (int i = 0; i < freehandPoints.Count; i++)
                 {
-                    ownPoints.Add(copyArr[i]);
+                    ownPoints.Add(freehandPoints.ElementAt(i));
                 }
 
                 shapeElement = new ProjektPaint.Model.Freehand(thickness, colorForm, pattern, ownPoints);
@@ -389,7 +386,7 @@ namespace ProjektPaint
         }
 
         /// <summary>
-        /// Verändert die Zeichnen-Farben
+        /// Verändert die Farben
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -684,11 +681,10 @@ namespace ProjektPaint
         /// </summary>
         private void SaveFile()
         {
-            bool succeed = fop.SaveFile(listForms, path);
+            isSaved = fop.SaveFile(listForms, path);
 
-            if (succeed)
+            if (isSaved)
             {
-                isSaved = true;
                 labelisSave.Text = "Gespeichert";
             }
             else
@@ -708,14 +704,14 @@ namespace ProjektPaint
 
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+                //Datei erstellen und schliessen
                 File.Create(sfd.FileName).Close();
 
-                bool succeed = fop.SaveFile(listForms, sfd.FileName);
+                isSaved = fop.SaveFile(listForms, sfd.FileName);
 
-                if (succeed)
+                if (isSaved)
                 {
                     path = sfd.FileName;
-                    isSaved = true;
                     labelisSave.Text = "Gespeichert";
                 }
             }
@@ -737,7 +733,7 @@ namespace ProjektPaint
                     //Speichern aufrufen
                     SaveFile();
 
-                    if (path == null)
+                    if (!isSaved)
                     {
                         result = DialogResult.Cancel;
                     }
@@ -751,12 +747,11 @@ namespace ProjektPaint
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    bool succeed = fop.OpenFile(ref listForms, ofd.FileName);
+                    isSaved = fop.OpenFile(ref listForms, ofd.FileName);
 
-                    if (succeed)
+                    if (isSaved)
                     {
                         path = ofd.FileName;
-                        isSaved = true;
                         labelisSave.Text = "Keine Änderungen";
                     }
                 }
@@ -779,7 +774,7 @@ namespace ProjektPaint
                     //Speichern aufrufen
                     SaveFile();
 
-                    if (path == null)
+                    if (!isSaved)
                     {
                         result = DialogResult.Cancel;
                     }

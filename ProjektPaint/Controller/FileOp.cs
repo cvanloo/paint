@@ -16,7 +16,7 @@ namespace ProjektPaint
         public FileOp() { }
 
         /// <summary>
-        /// Liest ein Bild ein
+        /// Liest ein als csv gespeichertes Bild ein
         /// </summary>
         /// <param name="lForm">Die Formen werden darin gespeichert</param>
         /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
@@ -137,18 +137,16 @@ namespace ProjektPaint
                 try
                 {
                     File.WriteAllLines(path, fileText);
+
+                    return true;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Fehler beim Speichern der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
+                    MessageBox.Show(ex.Message, "Fehler beim Speichern der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 }
             }
-            else
-            {
-                return false;
-            }
 
-            return true;
+            return false;
         }
 
         /// <summary>

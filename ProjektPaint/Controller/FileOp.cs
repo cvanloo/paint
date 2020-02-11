@@ -39,9 +39,12 @@ namespace ProjektPaint
                     {
                         case "Freehand":
                             List<Point> lPoints = new List<Point>();
-                            for (int i = 4; i < strValue.Length; i++)
+                            for (int i = 4; i < strValue.Length; i += 2)
                             {
-                                lPoints.Add(new Point(Convert.ToInt32(strValue[i++]), Convert.ToInt32(strValue[i])));
+                                if (strValue[i] != "" && strValue[i + 1] != "")
+                                {
+                                    lPoints.Add(new Point(Convert.ToInt32(strValue[i]), Convert.ToInt32(strValue[i + 1])));
+                                }
                             }
 
                             shape = new Freehand(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), getDashType(strValue[3]), lPoints);

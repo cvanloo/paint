@@ -121,23 +121,13 @@
   <data name="btnOpen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAW9JREFUaEPt169OxEAQBvBpi0AgTvAACB4BgeQREAgeAonAQUICbY8EiUAgEScR
-        CAQSgeABTvAICMQJkl1m7kZclg20t7ttSb5fMmI3/fe1nU1LAAAAAAD/Q22y+9rk7w1qWtns7NTSmu46
-        DLXNbWXyt8pkd3/Uo2zLgSccYkN37988AN9ZHf6Ktz3REDc61b82AURli/3S0K4O+9c2wOD4Alxa2uLX
-        5NbTBysVLwDHeuj4fAH44h/4pLOlFSikPrm+9NDxuQFkmVycNE6j8hN4klVOh/G5Aca22JO50uSHOhWE
-        L/5DXkcdxucG4JOdy9y1pZFOrezC0LbejCOdiu9ngPyF61WHQUpTHMyPb2hHp+LzBJgtj0Pw+z+WBua+
-        Wtep+NwAV5Y2Y33vJG9g4QaIKXkDi1QBOmlgkSpAJw0sUgXopIFFwgDpG1gsHnOjH5pWxXdfPkfSNrDg
-        Ez1z+T7CQms6qP8GAAAAAIAGiL4BIO63fgsCAB4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAANVJREFUaEPt1cENgjAUxvEevLcjOJIjOADgCHr34AiO4igesTiCh8ojrzcC2BZe
-        bb5f8mLApvQfoyoAAAAAAXVnnk1nXMBceQtZEQGueZsbbyPHB/DlIllFRAdIRyQJoJGKSBZAIxGRNKAf
-        XrKdkIAxqfb5WfEBZ6d2p1bvafjWqGwD6OD0/tzhEBCqyIDK6mNt9YWGftt9gL9HU730gZcPsgrorx/+
-        0BNz5+UDfAKh5h6ML/Haig/4+3/ipRAQCgFMPIBeo8aaj2hAquFtAQAAALaj1Bce7A9Z4qDLPQAAAABJ
-        RU5ErkJggg==
+        wwAADsMBx2+oZAAAAWdJREFUaEPtly1OBEEQhUsgEAgEB0BwBASSIyAQHAKJQJIgOQACsQmzPwnIFQjE
+        SgRiD4DgCAjECpJpXk1KbGY77M529cyQvC+pZKoyU9Wve6rTLYQQQgghhPwPyqFMYJ9rbSQfYSQ3YSY7
+        9mk/wKACBjeHDdbYi737HJ5kzz7vHh2Uzqy5fxIKuTYR9xbqniYCFLx7VhZyYm73NBXQO2ICwkQOy7E8
+        LP3/aTaUK0vtT0wAik5hi5WdaDv7hv1Yan/qAnSbrIo6NSpyvSLX3Fx/VgQUcqoxFL2wUBLI86W/o7n+
+        1AWg4G0VG8i+hbamfJQjm4xLC/kTEfCGZX83Nwlst+eVgLEcW8ifiIDFsp8Cct1pA2M1dy3kT10Ang+8
+        zjvZG1ipC/AEg8/bwEouAa00sJJNQBsNrGQT0EYDK9kEtNHASrXMm11ompkeR3I3sIJiMxSLHcLSDFfQ
+        Xt0bCCGEEEII2QCRX0MTy8SQO+v0AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

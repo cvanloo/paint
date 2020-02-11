@@ -50,7 +50,7 @@ namespace ProjektPaint
             this.btnAbort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbort.ForeColor = System.Drawing.Color.OrangeRed;
+            this.btnAbort.ForeColor = System.Drawing.Color.Red;
             this.btnAbort.Image = global::ProjektPaint.Properties.Resources.Close_WF;
             this.btnAbort.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbort.Location = new System.Drawing.Point(527, 162);
@@ -68,7 +68,7 @@ namespace ProjektPaint
             this.btnOpen.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpen.ForeColor = System.Drawing.Color.GreenYellow;
+            this.btnOpen.ForeColor = System.Drawing.Color.Orange;
             this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
             this.btnOpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpen.Location = new System.Drawing.Point(140, 162);
@@ -87,8 +87,8 @@ namespace ProjektPaint
             this.btnNew.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.Color.GreenYellow;
-            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.ForeColor = System.Drawing.Color.Lime;
+            this.btnNew.Image = global::ProjektPaint.Properties.Resources.Document_Add_01;
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNew.Location = new System.Drawing.Point(13, 162);
             this.btnNew.Name = "btnNew";

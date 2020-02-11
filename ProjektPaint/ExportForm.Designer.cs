@@ -107,7 +107,7 @@
             // 
             this.btnBmp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBmp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBmp.Image = global::ProjektPaint.Properties.Resources.File_Format_BitMap1;
+            this.btnBmp.Image = global::ProjektPaint.Properties.Resources.File_Format_BitMap;
             this.btnBmp.Location = new System.Drawing.Point(194, 140);
             this.btnBmp.Name = "btnBmp";
             this.btnBmp.Size = new System.Drawing.Size(47, 52);
@@ -119,7 +119,7 @@
             // 
             this.btnJpeg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnJpeg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnJpeg.Image = global::ProjektPaint.Properties.Resources.File_Format_JPEG1;
+            this.btnJpeg.Image = ((System.Drawing.Image)(resources.GetObject("btnJpeg.Image")));
             this.btnJpeg.Location = new System.Drawing.Point(194, 76);
             this.btnJpeg.Name = "btnJpeg";
             this.btnJpeg.Size = new System.Drawing.Size(45, 49);

@@ -81,9 +81,9 @@ namespace ProjektPaint.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Document_Add_011 {
+        internal static System.Drawing.Bitmap Document_Add_01 {
             get {
-                object obj = ResourceManager.GetObject("Document-Add-011", resourceCulture);
+                object obj = ResourceManager.GetObject("Document_Add_01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -130,23 +130,23 @@ namespace ProjektPaint.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap File_Format_BitMap1 {
+        internal static System.Drawing.Bitmap File_Format_BitMap {
             get {
-                object obj = ResourceManager.GetObject("File-Format-BitMap1", resourceCulture);
+                object obj = ResourceManager.GetObject("File_Format_BitMap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap File_Format_JPEG1 {
+        internal static System.Drawing.Bitmap File_Format_JPEG {
             get {
-                object obj = ResourceManager.GetObject("File-Format-JPEG1", resourceCulture);
+                object obj = ResourceManager.GetObject("File_Format_JPEG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap File_Format_PNG1 {
+        internal static System.Drawing.Bitmap File_Format_PNG {
             get {
-                object obj = ResourceManager.GetObject("File-Format-PNG1", resourceCulture);
+                object obj = ResourceManager.GetObject("File_Format_PNG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -228,9 +228,9 @@ namespace ProjektPaint.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap Open_Folder_WF1 {
+        internal static System.Drawing.Bitmap Open_Folder_WF {
             get {
-                object obj = ResourceManager.GetObject("Open Folder-WF1", resourceCulture);
+                object obj = ResourceManager.GetObject("Open_Folder_WF", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

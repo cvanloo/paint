@@ -30,31 +30,7 @@ namespace ProjektPaint
             {
                 foreach (string str in fileText)
                 {
-                    //Anzahl Werte im String herausfinden
-                    int length = 0;
-                    foreach (char cVar in str)
-                    {
-                        if (cVar == ';')
-                        {
-                            length++;
-                        }
-                    }
-
-                    string[] strValue = new string[length];
-                    int index = 0;
-
-                    //Werte ins String-Array speichern
-                    foreach (char cVar in str)
-                    {
-                        if (cVar != ';')
-                        {
-                            strValue[index] += cVar;
-                        }
-                        else
-                        {
-                            index++;
-                        }
-                    }
+                    string[] strValue = str.Split(';');
 
                     Shape shape = null;
 

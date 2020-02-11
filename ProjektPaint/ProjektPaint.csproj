@@ -210,6 +210,8 @@
     <None Include="Resources\Data-Export.ico" />
     <None Include="Resources\Data-Export.png" />
     <Content Include="Resources\startbild.bmp" />
+    <None Include="Resources\startbild2.1.bmp" />
+    <None Include="Resources\startbild2.bmp" />
     <None Include="Resources\Stationary-02-WF.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

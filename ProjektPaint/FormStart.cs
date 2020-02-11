@@ -74,7 +74,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Image img = Resources.startbild;
+            Image img = Resources.startbild2_1;
             Graphics graphics = Graphics.FromImage(img);
             e.Graphics.DrawImage(img, 0, 0);
         }

@@ -354,6 +354,20 @@ namespace ProjektPaint.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap startbild2 {
+            get {
+                object obj = ResourceManager.GetObject("startbild2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap startbild2_1 {
+            get {
+                object obj = ResourceManager.GetObject("startbild2_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Stationary_02_WF {
             get {
                 object obj = ResourceManager.GetObject("Stationary_02_WF", resourceCulture);

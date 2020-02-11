@@ -50,7 +50,7 @@ namespace ProjektPaint
             this.btnAbort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAbort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbort.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbort.ForeColor = System.Drawing.Color.Red;
+            this.btnAbort.ForeColor = System.Drawing.Color.OrangeRed;
             this.btnAbort.Image = global::ProjektPaint.Properties.Resources.Close_WF;
             this.btnAbort.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAbort.Location = new System.Drawing.Point(527, 162);

@@ -26,10 +26,38 @@ namespace ProjektPaint
         /// Alle Formen in die Bitmap zeichnen
         /// </summary>
         /// <param name="fElement">Beinhaltet alle zu zeichnenden Formen</param>
-        public void DrawImage(List<Shape> fElement)
+        public void DrawImage(List<Shape> fElement, Image img)
         {
             //Bild leeren
             Grphx.FillRectangle(Brushes.White, 0, 0, SplitCon.Panel2.Width, SplitCon.Panel2.Height);
+
+            if (img != null)
+            {
+                //Grösse der Bitmap
+                double bmpHeigth = Bmp.Height;
+                double bmpWidth = Bmp.Width;
+                
+                //Grösse des Bildes 
+                double imgHeigth = img.Height;
+                double imgWidth = img.Width;
+
+                //Grösse des Bildes an Grösse der Bitmap anpassen
+                if (imgWidth > bmpWidth)
+                {
+                    double sizeFactor = bmpWidth / imgWidth;
+                    imgHeigth = sizeFactor * imgHeigth;
+                    imgWidth = bmpWidth;
+                }
+
+                if (imgHeigth > bmpHeigth)
+                {
+                    double sizeFactor = bmpHeigth / imgHeigth;
+                    imgWidth = sizeFactor * imgWidth;
+                    imgHeigth = bmpHeigth;
+                }
+
+                Grphx.DrawImage(img, new System.Drawing.Rectangle(0, 0, (int)imgWidth, (int)imgHeigth));
+            }
 
             for (int i = 0; i < fElement.Count; i++)
             {

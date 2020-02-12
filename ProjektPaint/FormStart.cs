@@ -26,7 +26,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FormMain Main = new FormMain(null, null);
+            FormMain Main = new FormMain(null, null, null);
             Main.Show();
             this.Dispose();
         }
@@ -50,33 +50,35 @@ namespace ProjektPaint
         {
             FileOp fop = new FileOp();
             List<Shape> lForm = new List<Shape>();
+            Image img = null;
 
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Projekt Paint (*.prjp)|*.prjp";
+            ofd.Filter += "| JPEG (*.jpg)|*.jpg";
+            ofd.Filter += "| PNG (*.png)|*.png";
+            ofd.Filter += "| Bitmap (*.bmp)|*.bmp";
+            ofd.Filter += "| Bilddateien|*.jpg;*.png;*.bmp";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                bool succeed = fop.OpenFile(ref lForm, ofd.FileName);
+                bool succeed = false;
+
+                if (Path.GetExtension(ofd.FileName) == ".prjp")
+                {
+                    succeed = fop.OpenFile(ref lForm, ofd.FileName);
+                }
+                else
+                {
+                    succeed = fop.OpenFile(ref img, ofd.FileName);
+                }
 
                 if (succeed)
                 {
-                    FormMain Main = new FormMain(ofd.FileName, lForm);
+                    FormMain Main = new FormMain(ofd.FileName, lForm, img);
                     Main.Show();
                     this.Dispose();
                 }
             }
-        }
-
-        /// <summary>
-        /// Zeichnet das Hintergrundbild in das Panel
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            Image img = Resources.startbild2_1;
-            Graphics graphics = Graphics.FromImage(img);
-            e.Graphics.DrawImage(img, 0, 0);
         }
     }
 }

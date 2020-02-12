@@ -6,28 +6,30 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ProjektPaint.Model.Enums;
 
 namespace ProjektPaint
 {
     public partial class ExportForm : Form
     {
-        public int choose = -1;
-        public int qualityIndex;
+        private int qualityIndex;
+        private FileFormat choiceFileFormat;
+
+        public int QualityIndex
+        {
+            get { return qualityIndex; }
+        }
+
+        public FileFormat ChoiceFileFormat
+        {
+            get { return choiceFileFormat; }
+        }
 
         public ExportForm()
         {
             InitializeComponent();
-        }
 
-        /// <summary>
-        /// Legt die Standartwerte fest, wenn die Form geladen wird
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ExportForm_Load(object sender, EventArgs e)
-        {
             cbJpegQuality.SelectedIndex = 1;
-            qualityIndex = cbJpegQuality.SelectedIndex;
         }
 
         /// <summary>
@@ -39,15 +41,15 @@ namespace ProjektPaint
         {
             if (sender == btnPng)
             {
-                choose = 0;
+                choiceFileFormat = FileFormat.PNG;
             }
             else if (sender == btnJpeg)
             {
-                choose = 1;
+                choiceFileFormat = FileFormat.JPEG;
             }
             else if (sender == btnBmp)
             {
-                choose = 2;
+                choiceFileFormat = FileFormat.BMP;
             }
 
             this.Close();

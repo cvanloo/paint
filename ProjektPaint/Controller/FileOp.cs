@@ -23,6 +23,8 @@ namespace ProjektPaint
         /// <returns></returns>
         public bool OpenFile(ref List<Shape> lForm, string path)
         {
+            bool fileIsOpen = false;
+
             string[] fileText = File.ReadAllLines(path);
             List<Shape> newForms = new List<Shape>();
 
@@ -68,16 +70,41 @@ namespace ProjektPaint
 
                     newForms.Add(shape);
                 }
+
+                fileIsOpen = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-
-                return false;
             }
 
-            lForm = newForms;
-            return true;
+            lForm = newForms;    
+
+            return fileIsOpen;
+        }
+
+        /// <summary>
+        /// List eine Bilddatei ein
+        /// </summary>
+        /// <param name="img">Das Bild wird daring gespeichert</param>
+        /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
+        /// <returns></returns>
+        public bool OpenFile(ref Image img, string path)
+        {
+            bool fileIsOpen = false;
+
+            try
+            {
+                img = Image.FromFile(path);
+
+                fileIsOpen = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+
+            return fileIsOpen;
         }
 
         /// <summary>
@@ -89,13 +116,14 @@ namespace ProjektPaint
         {
             DashType pattern = DashType.Solid;
 
-            if (dashType == "Dotted")
+            switch (dashType)
             {
-                pattern = DashType.Dotted;
-            }
-            else if (dashType == "Dashed")
-            {
-                pattern = DashType.Dashed;
+                case "Dotted":
+                    pattern = DashType.Dotted;
+                    break;
+                case "Dashed":
+                    pattern = DashType.Dashed;
+                    break;
             }
 
             return pattern;
@@ -109,15 +137,22 @@ namespace ProjektPaint
         /// <returns>Gibt den Speicherort oder null zurück</returns>
         public bool SaveFile(List<Shape> FormsToSave, string path)
         {
-            if (File.Exists(path))
-            {
-                string[] fileText = AllFormInfos(FormsToSave);
+            bool savedSuccessful = false;
 
+            if (path != null)
+            {
                 try
                 {
+                    if (!File.Exists(path))
+                    {
+                        File.Create(path).Close();
+                    }
+
+                    string[] fileText = AllFormInfos(FormsToSave);
+
                     File.WriteAllLines(path, fileText);
 
-                    return true;
+                    savedSuccessful = true;
                 }
                 catch (Exception ex)
                 {
@@ -125,7 +160,7 @@ namespace ProjektPaint
                 }
             }
 
-            return false;
+            return savedSuccessful;
         }
 
         /// <summary>
@@ -157,20 +192,18 @@ namespace ProjektPaint
                 //Dateiformat auswählen
                 ExportForm expForm = new ExportForm();
                 expForm.ShowDialog();
-                int choose = expForm.choose;
-                int quality = expForm.qualityIndex;
 
                 //Zu Exportierende Datei anwählen
                 SaveFileDialog sfd = new SaveFileDialog();
-                if (choose == 0)
+                if (expForm.ChoiceFileFormat == FileFormat.PNG)
                 {
                     sfd.Filter = "png (*.png)|*.png";
                 }
-                else if (choose == 1)
+                else if (expForm.ChoiceFileFormat == FileFormat.JPEG)
                 {
                     sfd.Filter = "jpeg (*.jpeg)|*.jpeg";
                 }
-                else if (choose == 2)
+                else if (expForm.ChoiceFileFormat == FileFormat.BMP)
                 {
                     sfd.Filter = "Bitmap (*.bmp)|*.bmp";
                 }
@@ -202,19 +235,19 @@ namespace ProjektPaint
 
                     EncoderParameters myEncoderParameters = new EncoderParameters(1);
                     System.Drawing.Imaging.EncoderParameter myEncoderParameter = null;
-                    if (quality == 0)
+                    if (expForm.QualityIndex == 0)
                     {
                         myEncoderParameter = new System.Drawing.Imaging.EncoderParameter(myEncoder, 50L);
                     }
-                    else if (quality == 1)
+                    else if (expForm.QualityIndex == 1)
                     {
                         myEncoderParameter = new System.Drawing.Imaging.EncoderParameter(myEncoder, 100L);
                     }
-                    else if (quality == 2)
+                    else if (expForm.QualityIndex == 2)
                     {
                         myEncoderParameter = new System.Drawing.Imaging.EncoderParameter(myEncoder, 150L);
                     }
-                    else if (quality == 3)
+                    else if (expForm.QualityIndex == 3)
                     {
                         myEncoderParameter = new System.Drawing.Imaging.EncoderParameter(myEncoder, 200L);
                     }

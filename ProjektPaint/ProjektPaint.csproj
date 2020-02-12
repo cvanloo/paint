@@ -67,6 +67,7 @@
     <Compile Include="Model\Ellipse.cs" />
     <Compile Include="Model\Enums\DashType.cs" />
     <Compile Include="Model\Enums\DrawShape.cs" />
+    <Compile Include="Model\Enums\FileFormat.cs" />
     <Compile Include="Model\Shape.cs" />
     <Compile Include="Model\Shape2d.cs" />
     <Compile Include="Model\Freehand.cs" />

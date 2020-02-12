@@ -171,7 +171,6 @@
             this.Name = "ExportForm";
             this.ShowInTaskbar = false;
             this.Text = "Exportieren Als..";
-            this.Load += new System.EventHandler(this.ExportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnBmp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnJpeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPng)).EndInit();

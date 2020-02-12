@@ -537,7 +537,7 @@ namespace ProjektPaint
             // tsmiNew
             // 
             this.tsmiNew.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiNew.ForeColor = System.Drawing.Color.Lime;
+            this.tsmiNew.ForeColor = System.Drawing.Color.Black;
             this.tsmiNew.Name = "tsmiNew";
             this.tsmiNew.Size = new System.Drawing.Size(196, 24);
             this.tsmiNew.Text = "Neu";
@@ -547,7 +547,7 @@ namespace ProjektPaint
             // 
             this.tsmiOpen.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tsmiOpen.ForeColor = System.Drawing.Color.Orange;
+            this.tsmiOpen.ForeColor = System.Drawing.Color.Black;
             this.tsmiOpen.Name = "tsmiOpen";
             this.tsmiOpen.Size = new System.Drawing.Size(196, 24);
             this.tsmiOpen.Text = "Öffnen";
@@ -556,7 +556,7 @@ namespace ProjektPaint
             // tsmiSave
             // 
             this.tsmiSave.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiSave.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.tsmiSave.ForeColor = System.Drawing.Color.Black;
             this.tsmiSave.Name = "tsmiSave";
             this.tsmiSave.Size = new System.Drawing.Size(196, 24);
             this.tsmiSave.Text = "Speichern";
@@ -565,7 +565,7 @@ namespace ProjektPaint
             // tsmiSaveUnder
             // 
             this.tsmiSaveUnder.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiSaveUnder.ForeColor = System.Drawing.Color.Indigo;
+            this.tsmiSaveUnder.ForeColor = System.Drawing.Color.Black;
             this.tsmiSaveUnder.Name = "tsmiSaveUnder";
             this.tsmiSaveUnder.Size = new System.Drawing.Size(196, 24);
             this.tsmiSaveUnder.Text = "Speichern Unter";
@@ -574,7 +574,7 @@ namespace ProjektPaint
             // tsmiExportAs
             // 
             this.tsmiExportAs.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiExportAs.ForeColor = System.Drawing.Color.SteelBlue;
+            this.tsmiExportAs.ForeColor = System.Drawing.Color.Black;
             this.tsmiExportAs.Name = "tsmiExportAs";
             this.tsmiExportAs.Size = new System.Drawing.Size(196, 24);
             this.tsmiExportAs.Text = "Exportieren als.. >";
@@ -583,7 +583,7 @@ namespace ProjektPaint
             // tsmiStartmenue
             // 
             this.tsmiStartmenue.BackColor = System.Drawing.SystemColors.Control;
-            this.tsmiStartmenue.ForeColor = System.Drawing.Color.Red;
+            this.tsmiStartmenue.ForeColor = System.Drawing.Color.Black;
             this.tsmiStartmenue.Name = "tsmiStartmenue";
             this.tsmiStartmenue.Size = new System.Drawing.Size(196, 24);
             this.tsmiStartmenue.Text = "Startmenü";

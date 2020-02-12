@@ -50,7 +50,7 @@ namespace ProjektPaint
         private string path = null;
 
         //Gibt an, ob aktuell geöffnete Datei gespeichert ist
-        private bool isSaved = false;
+        private bool isSaved = true;
 
         //Strichdicke des Rahmens
         private int frameThickness = 1;
@@ -62,7 +62,10 @@ namespace ProjektPaint
 
         private FileOp fop;
 
-        public FormMain(string newPath, List<Shape> newForm)
+        //Hintergrundbild
+        Image img;
+
+        public FormMain(string newPath, List<Shape> newForm, Image newImage)
         {
             InitializeComponent();
 
@@ -72,7 +75,10 @@ namespace ProjektPaint
                 path = newPath;
             }
 
-            isSaved = true;
+            if (newImage != null)
+            {
+                img = newImage;
+            }
 
             fop = new FileOp();
         }
@@ -94,7 +100,7 @@ namespace ProjektPaint
 
                 //Bild in Bitmap zeichnen
                 imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-                imgDraw.DrawImage(listForms);
+                imgDraw.DrawImage(listForms, img);
             }
 
             //Bitmap in Panel2 zeichnen
@@ -138,7 +144,7 @@ namespace ProjektPaint
 
                 createNewShape(ePoint);
 
-                imgDraw.DrawImage(listForms);
+                imgDraw.DrawImage(listForms, img);
                 listForms.RemoveAt(listForms.Count - 1);
             }
         }
@@ -155,7 +161,7 @@ namespace ProjektPaint
 
             createNewShape(ePoint);
 
-            imgDraw.DrawImage(listForms);
+            imgDraw.DrawImage(listForms, img);
             isSaved = false;
             labelisSave.Text = "Ungespeichert";
 
@@ -296,7 +302,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void mnuSaveUnder_Click(object sender, EventArgs e)
         {
-            SaveUnderFile(); //Speichern Unter
+            SaveFileUnder(); //Speichern Unter
         }
 
         /// <summary>
@@ -317,7 +323,7 @@ namespace ProjektPaint
         private void öffnenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFile(); //Öffnen
-            imgDraw.DrawImage(listForms);
+            imgDraw.DrawImage(listForms, img);
         }
 
         /// <summary>
@@ -328,7 +334,7 @@ namespace ProjektPaint
         private void neuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewFile(); //Neu
-            imgDraw.DrawImage(listForms);
+            imgDraw.DrawImage(listForms, bmp);
         }
 
         /// <summary>
@@ -517,7 +523,7 @@ namespace ProjektPaint
                 }
             }
 
-            imgDraw.DrawImage(listForms);   
+            imgDraw.DrawImage(listForms, img);   
         }
 
         /// <summary>
@@ -580,7 +586,7 @@ namespace ProjektPaint
             if (e.KeyData == (Keys.Control | Keys.Shift | Keys.S))
             {
                 //Shortcut Speichern Unter
-                SaveUnderFile();
+                SaveFileUnder();
             }
             else if (e.KeyData == (Keys.Control | Keys.S))
             {
@@ -626,7 +632,7 @@ namespace ProjektPaint
             }
 
             //Bild neu zeichnen
-            imgDraw.DrawImage(listForms);
+            imgDraw.DrawImage(listForms, img);
         }
 
         /// <summary>
@@ -681,39 +687,47 @@ namespace ProjektPaint
         /// </summary>
         private void SaveFile()
         {
-            isSaved = fop.SaveFile(listForms, path);
-
-            if (isSaved)
+            if (img == null)
             {
-                labelisSave.Text = "Gespeichert";
-            }
-            else
-            {
-                //Speichern Unter aufrufen
-                SaveUnderFile();
-            }
-        }
-
-        /// <summary>
-        /// Speichert das Bild in eine neue Datei
-        /// </summary>
-        private void SaveUnderFile()
-        {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Projekt Paint (*.prjp)|*.prjp";
-
-            if (sfd.ShowDialog() == DialogResult.OK)
-            {
-                //Datei erstellen und schliessen
-                File.Create(sfd.FileName).Close();
-
-                isSaved = fop.SaveFile(listForms, sfd.FileName);
+                isSaved = fop.SaveFile(listForms, path);
 
                 if (isSaved)
                 {
-                    path = sfd.FileName;
                     labelisSave.Text = "Gespeichert";
                 }
+                else
+                {
+                    SaveFileUnder();
+                }
+            }
+            else
+            {
+                fop.ConvertAndExport(bmp);
+            }
+        }
+
+        private void SaveFileUnder()
+        {
+            if (img == null)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Projekt Paint (*.prjp)|*.prjp";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    isSaved = fop.SaveFile(listForms, sfd.FileName);
+
+                    if (isSaved)
+                    {
+                        path = sfd.FileName;
+
+                        labelisSave.Text = "Gespeichert";
+                    }
+                }
+            }
+            else
+            {
+                fop.ConvertAndExport(bmp);
             }
         }
 
@@ -744,10 +758,22 @@ namespace ProjektPaint
             {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "Projekt Paint (*.prjp)|*.prjp";
+                ofd.Filter += "| JPEG (*.jpg)|*.jpg";
+                ofd.Filter += "| PNG (*.png)|*.png";
+                ofd.Filter += "| Bitmap (*.bmp)|*.bmp";
+                ofd.Filter += "| Bilddateien|*.jpg;*.png;*.bmp";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    isSaved = fop.OpenFile(ref listForms, ofd.FileName);
+                    if (Path.GetExtension(ofd.FileName) == ".prjp")
+                    {
+                        isSaved = fop.OpenFile(ref listForms, ofd.FileName);
+                    }
+                    else
+                    {
+                        isSaved = fop.OpenFile(ref img, ofd.FileName);
+                        listForms.Clear();
+                    }
 
                     if (isSaved)
                     {
@@ -784,6 +810,7 @@ namespace ProjektPaint
             if (result != DialogResult.Cancel)
             {
                 listForms.Clear();
+                img = null;
                 path = null;
 
                 isSaved = true;

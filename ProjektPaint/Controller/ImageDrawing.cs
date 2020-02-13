@@ -33,30 +33,8 @@ namespace ProjektPaint
 
             if (img != null)
             {
-                //Grösse der Bitmap
-                double bmpHeigth = Bmp.Height;
-                double bmpWidth = Bmp.Width;
-                
-                //Grösse des Bildes 
-                double imgHeigth = img.Height;
-                double imgWidth = img.Width;
-
-                //Grösse des Bildes an Grösse der Bitmap anpassen
-                if (imgWidth > bmpWidth)
-                {
-                    double sizeFactor = bmpWidth / imgWidth;
-                    imgHeigth = sizeFactor * imgHeigth;
-                    imgWidth = bmpWidth;
-                }
-
-                if (imgHeigth > bmpHeigth)
-                {
-                    double sizeFactor = bmpHeigth / imgHeigth;
-                    imgWidth = sizeFactor * imgWidth;
-                    imgHeigth = bmpHeigth;
-                }
-
-                Grphx.DrawImage(img, new System.Drawing.Rectangle(0, 0, (int)imgWidth, (int)imgHeigth));
+                //Das Bild in die Bitmap zeichnen
+                Grphx.DrawImage(img, new System.Drawing.Rectangle(new Point(0, 0), GetImageSize(img)));
             }
 
             for (int i = 0; i < fElement.Count; i++)
@@ -70,6 +48,40 @@ namespace ProjektPaint
             gr.Dispose();
         }
 
+        /// <summary>
+        /// Passt die Grösse des Bildes der Grösse der Bitmap an
+        /// </summary>
+        /// <param name="img">Das anzupassende Bild</param>
+        /// <returns>Die neue Grösse</returns>
+        public Size GetImageSize(Image img)
+        {
+            //Grösse der Bitmap
+            double bmpHeigth = Bmp.Height;
+            double bmpWidth = Bmp.Width;
+
+            //Grösse des Bildes 
+            double imgHeigth = img.Height;
+            double imgWidth = img.Width;
+
+            //Grösse des Bildes an Grösse der Bitmap anpassen
+            if (imgWidth > bmpWidth)
+            {
+                double sizeFactor = bmpWidth / imgWidth;
+                imgHeigth = sizeFactor * imgHeigth;
+                imgWidth = bmpWidth;
+            }
+
+            if (imgHeigth > bmpHeigth)
+            {
+                double sizeFactor = bmpHeigth / imgHeigth;
+                imgWidth = sizeFactor * imgWidth;
+                imgHeigth = bmpHeigth;
+            }
+
+            Size size = new Size((int)imgWidth, (int)imgHeigth);
+
+            return size;
+        }
         
 
         /// <summary>

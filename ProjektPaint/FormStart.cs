@@ -53,11 +53,11 @@ namespace ProjektPaint
             Image img = null;
 
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Projekt Paint (*.prjp)|*.prjp";
+            ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp";
+            ofd.Filter += "| Projekt Paint (*.prjp)|*.prjp";
             ofd.Filter += "| JPEG (*.jpg)|*.jpg";
             ofd.Filter += "| PNG (*.png)|*.png";
             ofd.Filter += "| Bitmap (*.bmp)|*.bmp";
-            ofd.Filter += "| Bilddateien|*.jpg;*.png;*.bmp";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {

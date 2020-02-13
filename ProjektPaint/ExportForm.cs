@@ -12,10 +12,10 @@ namespace ProjektPaint
 {
     public partial class ExportForm : Form
     {
-        private int qualityIndex;
+        private long qualityIndex;
         private FileFormat choiceFileFormat;
 
-        public int QualityIndex
+        public long QualityIndex
         {
             get { return qualityIndex; }
         }
@@ -62,7 +62,21 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void cbJpegQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            qualityIndex = cbJpegQuality.SelectedIndex;
+            switch(cbJpegQuality.SelectedItem.ToString())
+            {
+                case "50L":
+                    qualityIndex = 50L;
+                    break;
+                case "100L":
+                    qualityIndex = 100L;
+                    break;
+                case "150L":
+                    qualityIndex = 150L;
+                    break;
+                case "200L":
+                    qualityIndex = 200L;
+                    break;
+            }
         }
     }
 }

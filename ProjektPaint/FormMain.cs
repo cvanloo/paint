@@ -628,7 +628,7 @@ namespace ProjektPaint
             else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.E))
             {
                 //Shortcut Exportieren Als..
-                fop.ConvertAndExport(bmp);
+                fop.ExportAs(bmp);
             }
 
             //Bild neu zeichnen
@@ -642,7 +642,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void tsmiExportAs_Click(object sender, EventArgs e)
         {
-            fop.ConvertAndExport(bmp);
+            fop.ExportAs(bmp);
         }
 
         private bool showOpener = false;
@@ -689,45 +689,53 @@ namespace ProjektPaint
         {
             if (img == null)
             {
-                isSaved = fop.SaveFile(listForms, path);
-
-                if (isSaved)
-                {
-                    labelisSave.Text = "Gespeichert";
-                }
-                else
-                {
-                    SaveFileUnder();
-                }
+                isSaved = fop.SaveFile(listForms, path); 
             }
             else
             {
-                fop.ConvertAndExport(bmp);
+                isSaved = fop.SaveImg(bmp, path);
+            }
+
+            if (isSaved)
+            {
+                labelisSave.Text = "Gespeichert";
+            }
+            else
+            {
+                SaveFileUnder();
             }
         }
 
         private void SaveFileUnder()
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+
             if (img == null)
             {
-                SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "Projekt Paint (*.prjp)|*.prjp";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     isSaved = fop.SaveFile(listForms, sfd.FileName);
-
-                    if (isSaved)
-                    {
-                        path = sfd.FileName;
-
-                        labelisSave.Text = "Gespeichert";
-                    }
                 }
+
+                sfd.Dispose();
             }
             else
             {
-                fop.ConvertAndExport(bmp);
+                sfd.Filter = "Alle Bilddateien|*.png;*.jpg;*.bmp";
+
+                if(sfd.ShowDialog() == DialogResult.OK)
+                {
+                    isSaved = fop.SaveImg(bmp, sfd.FileName);
+                }
+            }
+
+            if (isSaved)
+            {
+                path = sfd.FileName;
+
+                labelisSave.Text = "Gespeichert";
             }
         }
 
@@ -746,22 +754,17 @@ namespace ProjektPaint
                 {
                     //Speichern aufrufen
                     SaveFile();
-
-                    if (!isSaved)
-                    {
-                        result = DialogResult.Cancel;
-                    }
                 }
             }
 
-            if (result != DialogResult.Cancel)
+            if (isSaved)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "Projekt Paint (*.prjp)|*.prjp";
+                ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp";
+                ofd.Filter += "| Projekt Paint (*.prjp)|*.prjp";
                 ofd.Filter += "| JPEG (*.jpg)|*.jpg";
                 ofd.Filter += "| PNG (*.png)|*.png";
                 ofd.Filter += "| Bitmap (*.bmp)|*.bmp";
-                ofd.Filter += "| Bilddateien|*.jpg;*.png;*.bmp";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {

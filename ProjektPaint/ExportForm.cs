@@ -62,18 +62,18 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void cbJpegQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(cbJpegQuality.SelectedItem.ToString())
+            switch(cbJpegQuality.SelectedIndex)
             {
-                case "50L":
+                case 0:
                     qualityIndex = 50L;
                     break;
-                case "100L":
+                case 1:
                     qualityIndex = 100L;
                     break;
-                case "150L":
+                case 2:
                     qualityIndex = 150L;
                     break;
-                case "200L":
+                case 3:
                     qualityIndex = 200L;
                     break;
             }

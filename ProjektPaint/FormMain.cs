@@ -82,7 +82,7 @@ namespace ProjektPaint
 
             fop = new FileOp();
         }
-        
+
         /// <summary>
         /// Wird aufgerufen wenn das Zeichnenfeld dargestellt wird. Dabei wird die Bitmap initialisiert.
         /// </summary>
@@ -100,10 +100,13 @@ namespace ProjektPaint
 
                 //Bild in Bitmap zeichnen
                 imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-                imgDraw.DrawImage(listForms, img);
+
+                //Grösse der Bitmap an Grösse des geöffneten Bildes anpassen
+                adjustBmp();
             }
 
             //Bitmap in Panel2 zeichnen
+            imgDraw.DrawImage(listForms, img);
             e.Graphics.DrawImage(bmp, 0, 0);
         }
 
@@ -334,7 +337,7 @@ namespace ProjektPaint
         private void neuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewFile(); //Neu
-            imgDraw.DrawImage(listForms, bmp);
+            imgDraw.DrawImage(listForms, img);
         }
 
         /// <summary>
@@ -754,10 +757,15 @@ namespace ProjektPaint
                 {
                     //Speichern aufrufen
                     SaveFile();
+
+                    if(!isSaved)
+                    {
+                        result = DialogResult.Cancel;
+                    }
                 }
             }
 
-            if (isSaved)
+            if (result != DialogResult.Cancel)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp";
@@ -768,6 +776,9 @@ namespace ProjektPaint
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    listForms.Clear();
+                    img = null;
+
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
                         isSaved = fop.OpenFile(ref listForms, ofd.FileName);
@@ -775,15 +786,35 @@ namespace ProjektPaint
                     else
                     {
                         isSaved = fop.OpenFile(ref img, ofd.FileName);
-                        listForms.Clear();
                     }
 
                     if (isSaved)
                     {
                         path = ofd.FileName;
                         labelisSave.Text = "Keine Änderungen";
+                        adjustBmp();
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Passt Grösse der Bitmap an Grösse des geöffneten Bildes an
+        /// </summary>
+        private void adjustBmp()
+        {
+            //Bitmap auf Originalgrösse zurücksetzen
+            bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
+            graphBMP = Graphics.FromImage(bmp);
+            imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
+
+            if (img != null)
+            {
+                //Bitmap an Grösse des Bildes anpassen
+                bmp = new Bitmap(imgDraw.ConvertImageSize(img).Width, imgDraw.ConvertImageSize(img).Height);
+                graphBMP = Graphics.FromImage(bmp);
+                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
+                this.splitContainer1.Panel2.Refresh();
             }
         }
 
@@ -818,6 +849,7 @@ namespace ProjektPaint
 
                 isSaved = true;
                 labelisSave.Text = "Keine Änderungen";
+                adjustBmp();
             }
         }
 

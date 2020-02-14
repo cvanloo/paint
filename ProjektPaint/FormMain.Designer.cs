@@ -102,8 +102,8 @@ namespace ProjektPaint
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.SystemColors.Desktop;
             this.panel1.Controls.Add(this.mtbFrameThickness);
             this.panel1.Controls.Add(this.panel2);
@@ -136,8 +136,8 @@ namespace ProjektPaint
             this.mtbFrameThickness.TabIndex = 18;
             this.mtbFrameThickness.Text = "1";
             this.toolTip1.SetToolTip(this.mtbFrameThickness, "Gibt die Strichdicke des Rahmens an. \r\nAkzeptierter Wert: 1 - 20");
-            this.mtbFrameThickness.TextChanged += new System.EventHandler(this.mtbFrameThickness_TextChanged);
             this.mtbFrameThickness.Click += new System.EventHandler(this.mtbFrameThickness_Click);
+            this.mtbFrameThickness.TextChanged += new System.EventHandler(this.mtbFrameThickness_TextChanged);
             // 
             // panel2
             // 
@@ -364,9 +364,9 @@ namespace ProjektPaint
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.BackColor = System.Drawing.SystemColors.Desktop;
             this.splitContainer1.Location = new System.Drawing.Point(0, 54);
             this.splitContainer1.Name = "splitContainer1";
@@ -388,8 +388,8 @@ namespace ProjektPaint
             this.splitContainer1.Panel2.Controls.Add(this.labelisSave);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseMove);
             this.splitContainer1.Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseDown);
+            this.splitContainer1.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseMove);
             this.splitContainer1.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseUp);
             this.splitContainer1.Size = new System.Drawing.Size(1073, 516);
             this.splitContainer1.SplitterDistance = 89;
@@ -397,8 +397,8 @@ namespace ProjektPaint
             // 
             // btnEllipse
             // 
-            this.btnEllipse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEllipse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEllipse.BackColor = System.Drawing.Color.DimGray;
             this.btnEllipse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEllipse.ForeColor = System.Drawing.Color.SlateBlue;
@@ -413,8 +413,8 @@ namespace ProjektPaint
             // 
             // btnCircle
             // 
-            this.btnCircle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCircle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCircle.BackColor = System.Drawing.Color.DimGray;
             this.btnCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCircle.ForeColor = System.Drawing.Color.SlateBlue;
@@ -429,8 +429,8 @@ namespace ProjektPaint
             // 
             // btnLine
             // 
-            this.btnLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLine.BackColor = System.Drawing.Color.DimGray;
             this.btnLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLine.ForeColor = System.Drawing.Color.SlateBlue;
@@ -445,8 +445,8 @@ namespace ProjektPaint
             // 
             // btnSquare
             // 
-            this.btnSquare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSquare.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSquare.BackColor = System.Drawing.Color.DimGray;
             this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSquare.ForeColor = System.Drawing.Color.SlateBlue;
@@ -461,8 +461,8 @@ namespace ProjektPaint
             // 
             // btnRectangle
             // 
-            this.btnRectangle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRectangle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRectangle.BackColor = System.Drawing.Color.DimGray;
             this.btnRectangle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRectangle.ForeColor = System.Drawing.Color.SlateBlue;
@@ -477,8 +477,8 @@ namespace ProjektPaint
             // 
             // btnFreehand
             // 
-            this.btnFreehand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFreehand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFreehand.BackColor = System.Drawing.Color.DimGray;
             this.btnFreehand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFreehand.ForeColor = System.Drawing.Color.OrangeRed;
@@ -608,8 +608,8 @@ namespace ProjektPaint
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint v.1.0 - Zeichnungsprogramm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormMain_KeyDown);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);

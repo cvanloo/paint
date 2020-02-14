@@ -34,7 +34,7 @@ namespace ProjektPaint
             if (img != null)
             {
                 //Das Bild in die Bitmap zeichnen
-                Grphx.DrawImage(img, new System.Drawing.Rectangle(new Point(0, 0), GetImageSize(img)));
+                Grphx.DrawImage(img, new System.Drawing.Rectangle(new Point(0, 0), ConvertImageSize(img)));
             }
 
             for (int i = 0; i < fElement.Count; i++)
@@ -53,11 +53,11 @@ namespace ProjektPaint
         /// </summary>
         /// <param name="img">Das anzupassende Bild</param>
         /// <returns>Die neue Grösse</returns>
-        public Size GetImageSize(Image img)
+        public Size ConvertImageSize(Image img)
         {
             //Grösse der Bitmap
-            double bmpHeigth = Bmp.Height;
             double bmpWidth = Bmp.Width;
+            double bmpHeigth = Bmp.Height;
 
             //Grösse des Bildes 
             double imgHeigth = img.Height;

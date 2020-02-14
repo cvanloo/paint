@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using ProjektPaint.Model;
 using ProjektPaint.Model.Enums;
+using Microsoft.VisualBasic.FileIO;
 
 namespace ProjektPaint
 {
@@ -95,7 +96,10 @@ namespace ProjektPaint
 
             try
             {
-                img = Image.FromFile(path);
+                string tempPath = SpecialDirectories.Temp + "\\tempPicture.png";
+                File.Copy(path, tempPath, true);
+
+                img = Image.FromFile(tempPath);
 
                 fileIsOpen = true;
             }
@@ -172,7 +176,6 @@ namespace ProjektPaint
         public bool SaveImg(Bitmap bmp, string path)
         {
             bool savedSuccessful = ConvertAndExport(bmp, path, ImageFormat.Png, 100L);
-
 
             return savedSuccessful;
         }

@@ -89,7 +89,7 @@ namespace ProjektPaint
         /// <param name="img">Das Bild wird daring gespeichert</param>
         /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
         /// <returns></returns>
-        public bool OpenFile(ref Image img, string path)
+        public bool OpenImage(ref Image img, string path)
         {
             bool fileIsOpen = false;
 

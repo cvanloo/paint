@@ -43,6 +43,9 @@ namespace ProjektPaint
         //Alle Formen werden darin gespeichert
         private List<Shape> listForms = new List<Shape>();
 
+        //Mit Undo gelöschte Objekte werden daring gespeichert
+        private List<Shape> rForms = new List<Shape>();
+
         //Alle Punkte eines Freehand-Objekts werden darin gespeichert
         private List<Point> freehandPoints = new List<Point>();
 
@@ -273,7 +276,7 @@ namespace ProjektPaint
                 selectedShape = DrawShape.Circle;
             }
             
-            setButtonColor((Button)sender, splitContainer1.Panel1);
+            SetButtonColor((Button)sender, splitContainer1.Panel1);
         }
 
         /// <summary>
@@ -281,7 +284,7 @@ namespace ProjektPaint
         /// </summary>
         /// <param name="activeButton">Der Aktive Button</param>
         /// <param name="panel">Das Panel beinhaltet alle anzupassenden Buttons</param>
-        private void setButtonColor(Button activeButton, Panel panel)
+        private void SetButtonColor(Button activeButton, Panel panel)
         {
             //Farbe der Buttons ändern, damit man sieht, welcher aktiv ist 
             foreach (Control control in panel.Controls.OfType<Button>())
@@ -373,7 +376,7 @@ namespace ProjektPaint
                 pattern = DashType.Dotted;
             }
 
-            setButtonColor((Button)sender, panel2);
+            SetButtonColor((Button)sender, panel2);
         }
 
         /// <summary>
@@ -404,17 +407,15 @@ namespace ProjektPaint
             //Farben werden festgelegt
             colorDialog.ShowDialog();
 
-            //Farbe der Form
             if (sender == btnColorForm)
             {
+                //Farbe der Form
                 btnColorForm.BackColor = colorDialog.Color;
                 colorForm = btnColorForm.BackColor;
-
-                setButtonColorFromBrightness(btnColorForm);
             }
-            //Farbe des Rahmens
             else if (sender == btnColFrame)
             {
+                //Farbe des Rahmens
                 btnColFrame.BackColor = colorDialog.Color;
 
                 if (cbFrameOuter.CheckState == CheckState.Checked)
@@ -426,21 +427,19 @@ namespace ProjektPaint
                 {
                     colorFrameIn = btnColFrame.BackColor;
                 }
-
-                setButtonColorFromBrightness(btnColFrame);
             }
-            //Farbe der Füllung
             else if (sender == btnColFill)
             {
+                //Farbe der Füllung
                 btnColFill.BackColor = colorDialog.Color;
 
                 if (cbFill.CheckState == CheckState.Checked)
                 {
                     colorFill = btnColFill.BackColor;
                 }
-
-                setButtonColorFromBrightness(btnColFill);
             }
+
+            setButtonColorFromBrightness((Button)sender);
         }
 
         /// <summary>
@@ -494,8 +493,6 @@ namespace ProjektPaint
             }
         }
 
-        private List<Shape> rForms = new List<Shape>();
-
         /// <summary>
         /// Löscht das letzte Shape oder stellt es wieder her
         /// </summary>
@@ -542,17 +539,18 @@ namespace ProjektPaint
             {
                 DialogResult result = MessageBox.Show("Möchten Sie das Bild speichern?", "Datei nicht gespeichert!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
 
-                if (result == DialogResult.Yes)
+                if(result == DialogResult.Yes)
                 {
                     SaveFile();
 
-                    if (path == null)
+                    if(path == null)
                     {
                         e.Cancel = true;
                         showOpener = false;
                     }
                 }
-                else if (result == DialogResult.Cancel)
+
+                if (result == DialogResult.Cancel)
                 {
                     e.Cancel = true;
                     showOpener = false;
@@ -768,11 +766,11 @@ namespace ProjektPaint
             if (result != DialogResult.Cancel)
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp";
-                ofd.Filter += "| Projekt Paint (*.prjp)|*.prjp";
-                ofd.Filter += "| JPEG (*.jpg)|*.jpg";
-                ofd.Filter += "| PNG (*.png)|*.png";
-                ofd.Filter += "| Bitmap (*.bmp)|*.bmp";
+                ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp" +
+                    "| Projekt Paint (*.prjp)|*.prjp" +
+                    "| JPEG (*.jpg)|*.jpg" +
+                    "| PNG (*.png)|*.png" +
+                    "| Bitmap (*.bmp)|*.bmp";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -785,7 +783,7 @@ namespace ProjektPaint
                     }
                     else
                     {
-                        isSaved = fop.OpenFile(ref img, ofd.FileName);
+                        isSaved = fop.OpenImage(ref img, ofd.FileName);
                     }
 
                     if (isSaved)
@@ -810,12 +808,14 @@ namespace ProjektPaint
 
             if (img != null)
             {
-                //Bitmap an Grösse des Bildes anpassen
+                //Bitmap an Grösse des geöffneten Bildes anpassen
                 bmp = new Bitmap(imgDraw.ConvertImageSize(img).Width, imgDraw.ConvertImageSize(img).Height);
                 graphBMP = Graphics.FromImage(bmp);
                 imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-                this.splitContainer1.Panel2.Refresh();
             }
+
+            //Zeichnen-Panel aktualisieren
+            this.splitContainer1.Panel2.Refresh();
         }
 
         /// <summary>

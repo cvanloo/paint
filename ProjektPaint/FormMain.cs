@@ -565,6 +565,12 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (img != null)
+            {
+                img.Dispose();
+                img = null;
+            }
+
             if (showOpener)
             {
                 FormStart fstart = new FormStart();
@@ -776,10 +782,12 @@ namespace ProjektPaint
                 {
                     listForms.Clear();
 
-                    if (img != null)
+                    if(img != null)
                     {
                         img.Dispose();
+                        img = null;
                     }
+                    
 
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
@@ -848,7 +856,13 @@ namespace ProjektPaint
             if (result != DialogResult.Cancel)
             {
                 listForms.Clear();
-                img = null;
+
+                if (img != null)
+                {
+                    img.Dispose();
+                    img = null;
+                }
+
                 path = null;
 
                 isSaved = true;

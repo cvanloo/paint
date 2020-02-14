@@ -78,7 +78,7 @@ namespace ProjektPaint
                 imgHeigth = bmpHeigth;
             }
 
-            Size size = new Size((int)imgWidth, (int)imgHeigth);
+            Size size = new Size(Convert.ToInt32(imgWidth), Convert.ToInt32(imgHeigth));
 
             return size;
         }

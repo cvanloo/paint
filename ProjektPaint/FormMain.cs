@@ -105,7 +105,7 @@ namespace ProjektPaint
                 imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
 
                 //Grösse der Bitmap an Grösse des geöffneten Bildes anpassen
-                adjustBmp();
+                AdjustBmp();
             }
 
             //Bitmap in Panel2 zeichnen
@@ -775,7 +775,11 @@ namespace ProjektPaint
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     listForms.Clear();
-                    img = null;
+
+                    if (img != null)
+                    {
+                        img.Dispose();
+                    }
 
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
@@ -790,7 +794,7 @@ namespace ProjektPaint
                     {
                         path = ofd.FileName;
                         labelisSave.Text = "Keine Änderungen";
-                        adjustBmp();
+                        AdjustBmp();
                     }
                 }
             }
@@ -799,7 +803,7 @@ namespace ProjektPaint
         /// <summary>
         /// Passt Grösse der Bitmap an Grösse des geöffneten Bildes an
         /// </summary>
-        private void adjustBmp()
+        private void AdjustBmp()
         {
             //Bitmap auf Originalgrösse zurücksetzen
             bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
@@ -849,7 +853,7 @@ namespace ProjektPaint
 
                 isSaved = true;
                 labelisSave.Text = "Keine Änderungen";
-                adjustBmp();
+                AdjustBmp();
             }
         }
 

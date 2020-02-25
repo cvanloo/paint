@@ -149,6 +149,7 @@ namespace ProjektPaint
                 {
                     if (!File.Exists(path))
                     {
+                        //Wenn die Datei nicht existiert, erstelle sie
                         File.Create(path).Close();
                     }
 
@@ -175,7 +176,20 @@ namespace ProjektPaint
         /// <returns>Gibt true zurück, wenn das Speichern erfolgreich war</returns>
         public bool SaveImg(Bitmap bmp, string path)
         {
-            bool savedSuccessful = ConvertAndExport(bmp, path, ImageFormat.Png, 100L);
+            bool savedSuccessful = false;
+
+            if(path.Contains(".png"))
+            {
+                savedSuccessful = ConvertAndExport(bmp, path, ImageFormat.Png, 100L);
+            }
+            else if(path.Contains(".jpg") || path.Contains(".jpeg"))
+            {
+                savedSuccessful = ConvertAndExport(bmp, path, ImageFormat.Jpeg, 200L);
+            }
+            else
+            {
+                savedSuccessful = ConvertAndExport(bmp, path, ImageFormat.Bmp, 100L);
+            }
 
             return savedSuccessful;
         }

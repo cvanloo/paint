@@ -392,7 +392,7 @@ namespace ProjektPaint
             this.splitContainer1.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseMove);
             this.splitContainer1.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseUp);
             this.splitContainer1.Size = new System.Drawing.Size(1073, 516);
-            this.splitContainer1.SplitterDistance = 89;
+            this.splitContainer1.SplitterDistance = 83;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnEllipse
@@ -405,7 +405,7 @@ namespace ProjektPaint
             this.btnEllipse.Image = ((System.Drawing.Image)(resources.GetObject("btnEllipse.Image")));
             this.btnEllipse.Location = new System.Drawing.Point(10, 267);
             this.btnEllipse.Name = "btnEllipse";
-            this.btnEllipse.Size = new System.Drawing.Size(75, 60);
+            this.btnEllipse.Size = new System.Drawing.Size(71, 60);
             this.btnEllipse.TabIndex = 6;
             this.toolTip1.SetToolTip(this.btnEllipse, "Ellipse");
             this.btnEllipse.UseVisualStyleBackColor = false;
@@ -421,7 +421,7 @@ namespace ProjektPaint
             this.btnCircle.Image = ((System.Drawing.Image)(resources.GetObject("btnCircle.Image")));
             this.btnCircle.Location = new System.Drawing.Point(9, 333);
             this.btnCircle.Name = "btnCircle";
-            this.btnCircle.Size = new System.Drawing.Size(75, 60);
+            this.btnCircle.Size = new System.Drawing.Size(71, 60);
             this.btnCircle.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnCircle, "Kreis");
             this.btnCircle.UseVisualStyleBackColor = false;
@@ -437,7 +437,7 @@ namespace ProjektPaint
             this.btnLine.Image = ((System.Drawing.Image)(resources.GetObject("btnLine.Image")));
             this.btnLine.Location = new System.Drawing.Point(10, 69);
             this.btnLine.Name = "btnLine";
-            this.btnLine.Size = new System.Drawing.Size(75, 60);
+            this.btnLine.Size = new System.Drawing.Size(71, 60);
             this.btnLine.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btnLine, "Linie");
             this.btnLine.UseVisualStyleBackColor = false;
@@ -453,7 +453,7 @@ namespace ProjektPaint
             this.btnSquare.Image = ((System.Drawing.Image)(resources.GetObject("btnSquare.Image")));
             this.btnSquare.Location = new System.Drawing.Point(10, 201);
             this.btnSquare.Name = "btnSquare";
-            this.btnSquare.Size = new System.Drawing.Size(75, 60);
+            this.btnSquare.Size = new System.Drawing.Size(71, 60);
             this.btnSquare.TabIndex = 4;
             this.toolTip1.SetToolTip(this.btnSquare, "Quadrat");
             this.btnSquare.UseVisualStyleBackColor = false;
@@ -469,7 +469,7 @@ namespace ProjektPaint
             this.btnRectangle.Image = ((System.Drawing.Image)(resources.GetObject("btnRectangle.Image")));
             this.btnRectangle.Location = new System.Drawing.Point(10, 135);
             this.btnRectangle.Name = "btnRectangle";
-            this.btnRectangle.Size = new System.Drawing.Size(75, 60);
+            this.btnRectangle.Size = new System.Drawing.Size(71, 60);
             this.btnRectangle.TabIndex = 2;
             this.toolTip1.SetToolTip(this.btnRectangle, "Rechteck");
             this.btnRectangle.UseVisualStyleBackColor = false;
@@ -485,7 +485,7 @@ namespace ProjektPaint
             this.btnFreehand.Image = ((System.Drawing.Image)(resources.GetObject("btnFreehand.Image")));
             this.btnFreehand.Location = new System.Drawing.Point(10, 3);
             this.btnFreehand.Name = "btnFreehand";
-            this.btnFreehand.Size = new System.Drawing.Size(75, 60);
+            this.btnFreehand.Size = new System.Drawing.Size(71, 60);
             this.btnFreehand.TabIndex = 1;
             this.toolTip1.SetToolTip(this.btnFreehand, "Freihand");
             this.btnFreehand.UseVisualStyleBackColor = false;

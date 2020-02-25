@@ -61,11 +61,13 @@ namespace ProjektPaint
         //Gibt an, welche Form gezeichnet werden sollte
         private DrawShape selectedShape = DrawShape.Freehand; //Standard: Freehand
 
+        //Wird benutzt um in die Bitmap zu zeichnen
         private ImageDrawing imgDraw;
 
+        //Wird für Speichern/Öffnen und Exportieren gebraucht
         private FileOp fop;
 
-        //Hintergrundbild
+        //Bild wird darin gespeichert (Falls der Benutzer ein PNG/JPEG/BMP öffnet)
         Image img;
 
         public FormMain(string newPath, List<Shape> newForm, Image newImage)
@@ -96,21 +98,34 @@ namespace ProjektPaint
             if (bmp == null)
             {
                 //Bitmap mit Grösse initialisieren
-                bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
-
-                //Bitmap an graphBMP zuweisen
-                graphBMP = Graphics.FromImage(bmp);
-
-                //Bild in Bitmap zeichnen
-                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-
-                //Grösse der Bitmap an Grösse des geöffneten Bildes anpassen
                 AdjustBmp();
             }
 
             //Bitmap in Panel2 zeichnen
             imgDraw.DrawImage(listForms, img);
             e.Graphics.DrawImage(bmp, 0, 0);
+        }
+
+        /// <summary>
+        /// Passt die grösse der Bitmap an geöffnete Datei/Bild an
+        /// </summary>
+        private void AdjustBmp()
+        {
+            //Bitmap auf Originalgrösse zurücksetzen
+            bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
+            graphBMP = Graphics.FromImage(bmp);
+            imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp); //imgDraw mit neuer Bitmap initialisieren
+
+            if (img != null)
+            {
+                //Bitmap an Grösse des geöffneten Bildes anpassen
+                bmp = new Bitmap(imgDraw.ConvertImageSize(img).Width, imgDraw.ConvertImageSize(img).Height);
+                graphBMP = Graphics.FromImage(bmp);
+                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp); //imgDraw mit abgeänderter Bitmap initialisieren
+            }
+
+            //Zeichnen-Panel aktualisieren
+            this.splitContainer1.Panel2.Refresh();
         }
 
         /// <summary>
@@ -696,11 +711,11 @@ namespace ProjektPaint
         {
             if (img == null)
             {
-                isSaved = fop.SaveFile(listForms, path); 
+                isSaved = fop.SaveFile(listForms, path);  //Als CSV speichern
             }
             else
             {
-                isSaved = fop.SaveImg(bmp, path);
+                isSaved = fop.SaveImg(bmp, path);  //Als PNG speichern
             }
 
             if (isSaved)
@@ -762,7 +777,7 @@ namespace ProjektPaint
                     //Speichern aufrufen
                     SaveFile();
 
-                    if(!isSaved)
+                    if (!isSaved)
                     {
                         result = DialogResult.Cancel;
                     }
@@ -780,9 +795,9 @@ namespace ProjektPaint
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    listForms.Clear();
+                    listForms.Clear(); //Liste leeren
 
-                    if(img != null)
+                    if(img != null) //Image leeren
                     {
                         img.Dispose();
                         img = null;
@@ -791,43 +806,24 @@ namespace ProjektPaint
 
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
+                        //Einlesen CSV
                         isSaved = fop.OpenFile(ref listForms, ofd.FileName);
                     }
                     else
                     {
+                        //Einlesen Image (PNG/JPEG/BMP)
                         isSaved = fop.OpenImage(ref img, ofd.FileName);
                     }
 
                     if (isSaved)
                     {
+                        //Öffnen erfolgreich
                         path = ofd.FileName;
                         labelisSave.Text = "Keine Änderungen";
                         AdjustBmp();
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Passt Grösse der Bitmap an Grösse des geöffneten Bildes an
-        /// </summary>
-        private void AdjustBmp()
-        {
-            //Bitmap auf Originalgrösse zurücksetzen
-            bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
-            graphBMP = Graphics.FromImage(bmp);
-            imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-
-            if (img != null)
-            {
-                //Bitmap an Grösse des geöffneten Bildes anpassen
-                bmp = new Bitmap(imgDraw.ConvertImageSize(img).Width, imgDraw.ConvertImageSize(img).Height);
-                graphBMP = Graphics.FromImage(bmp);
-                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
-            }
-
-            //Zeichnen-Panel aktualisieren
-            this.splitContainer1.Panel2.Refresh();
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace ProjektPaint
                 Grphx.DrawImage(img, new System.Drawing.Rectangle(new Point(0, 0), ConvertImageSize(img)));
             }
 
+            //Alle Shapes in die Bitmap zeichnen
             for (int i = 0; i < fElement.Count; i++)
             {
                 fElement.ElementAt(i).Draw(Grphx);

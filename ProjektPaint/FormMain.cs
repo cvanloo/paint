@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing.Drawing2D;
 using ProjektPaint.Model;
 using ProjektPaint.Model.Enums;
+using Microsoft.VisualBasic.FileIO;
 
 namespace ProjektPaint
 {
@@ -74,7 +71,7 @@ namespace ProjektPaint
         {
             InitializeComponent();
 
-            if (newPath != null)
+            if (newPath != null && newForm != null)
             {
                 listForms = newForm;
                 path = newPath;
@@ -107,7 +104,7 @@ namespace ProjektPaint
         }
 
         /// <summary>
-        /// Passt die grösse der Bitmap an geöffnete Datei/Bild an
+        /// Passt die grösse der Bitmap an geöffneter Datei/Bild an
         /// </summary>
         private void AdjustBmp()
         {
@@ -205,11 +202,11 @@ namespace ProjektPaint
                 //Startpunkte, Länge und Breite berechnen
                 if (selectedShape == DrawShape.Rectangle || selectedShape == DrawShape.Ellipse)
                 {
-                    iArr = imgDraw.convertPointsToLengthAndWidth(sPoint, ePoint, false);
+                    iArr = imgDraw.ConvertPointsToLengthAndWidth(sPoint, ePoint, false);
                 }
                 else if (selectedShape == DrawShape.Square || selectedShape == DrawShape.Circle)
                 {
-                    iArr = imgDraw.convertPointsToLengthAndWidth(sPoint, ePoint, true);
+                    iArr = imgDraw.ConvertPointsToLengthAndWidth(sPoint, ePoint, true);
                 }
                 newSPoint.X = iArr[2];
                 newSPoint.Y = iArr[3];
@@ -586,6 +583,12 @@ namespace ProjektPaint
                 img = null;
             }
 
+            FileInfo fileInfo = new FileInfo(path);
+            if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
+            {
+                File.Delete(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension);
+            }
+
             if (showOpener)
             {
                 FormStart fstart = new FormStart();
@@ -740,8 +743,6 @@ namespace ProjektPaint
                 {
                     isSaved = fop.SaveFile(listForms, sfd.FileName);
                 }
-
-                sfd.Dispose();
             }
             else
             {
@@ -753,10 +754,11 @@ namespace ProjektPaint
                 }
             }
 
+            sfd.Dispose();
+
             if (isSaved)
             {
                 path = sfd.FileName;
-
                 labelisSave.Text = "Gespeichert";
             }
         }
@@ -802,7 +804,16 @@ namespace ProjektPaint
                         img.Dispose();
                         img = null;
                     }
-                    
+
+                    //Temporäre Datei löschen, falls vorhanden
+                    if (path != null)
+                    {
+                        FileInfo fileInfo = new FileInfo(path);
+                        if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
+                        {
+                            File.Delete(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension);
+                        }
+                    }
 
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
@@ -853,10 +864,20 @@ namespace ProjektPaint
             {
                 listForms.Clear();
 
-                if (img != null)
+                if (img != null) //Image leeren
                 {
                     img.Dispose();
                     img = null;
+                }
+
+                //Temporäre Datei löschen, falls vorhanden
+                if (path != null)
+                {
+                    FileInfo fileInfo = new FileInfo(path);
+                    if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
+                    {
+                        File.Delete(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension);
+                    }
                 }
 
                 path = null;

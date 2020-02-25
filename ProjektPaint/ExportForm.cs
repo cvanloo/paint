@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using ProjektPaint.Model.Enums;
 
@@ -62,7 +56,7 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void cbJpegQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch(cbJpegQuality.SelectedIndex)
+            switch (cbJpegQuality.SelectedIndex)
             {
                 case 0:
                     qualityIndex = 50L;

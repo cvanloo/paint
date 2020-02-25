@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
@@ -50,22 +48,22 @@ namespace ProjektPaint
                                 }
                             }
 
-                            shape = new Freehand(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), getDashType(strValue[3]), lPoints);
+                            shape = new Freehand(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), GetDashType(strValue[3]), lPoints);
                             break;
                         case "Line":
-                            shape = new Line(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), new Point(Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7])), getDashType(strValue[5]));
+                            shape = new Line(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), new Point(Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7])), GetDashType(strValue[5]));
                             break;
                         case "Rectangle":
-                            shape = new ProjektPaint.Model.Rectangle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
+                            shape = new ProjektPaint.Model.Rectangle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), GetDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
                             break;
                         case "Square":
-                            shape = new Square(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
+                            shape = new Square(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), GetDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
                             break;
                         case "Ellipse":
-                            shape = new Ellipse(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
+                            shape = new Ellipse(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), GetDashType(strValue[5]), Convert.ToInt32(strValue[6]), Convert.ToInt32(strValue[7]), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Color.FromArgb(Convert.ToInt32(strValue[10])), Convert.ToInt32(strValue[11]));
                             break;
                         case "Circle":
-                            shape = new Circle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), getDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
+                            shape = new Circle(Convert.ToInt32(strValue[1]), Color.FromArgb(Convert.ToInt32(strValue[2])), new Point(Convert.ToInt32(strValue[3]), Convert.ToInt32(strValue[4])), GetDashType(strValue[5]), Convert.ToInt32(strValue[6]), Color.FromArgb(Convert.ToInt32(strValue[7])), Color.FromArgb(Convert.ToInt32(strValue[8])), Color.FromArgb(Convert.ToInt32(strValue[9])), Convert.ToInt32(strValue[10]));
                             break;
                     }
 
@@ -85,38 +83,11 @@ namespace ProjektPaint
         }
 
         /// <summary>
-        /// List eine Bilddatei ein
-        /// </summary>
-        /// <param name="img">Das Bild wird daring gespeichert</param>
-        /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
-        /// <returns></returns>
-        public bool OpenImage(ref Image img, string path)
-        {
-            bool fileIsOpen = false;
-
-            try
-            {
-                string tempPath = SpecialDirectories.Temp + "\\tempPicture.png";
-                File.Copy(path, tempPath, true);
-
-                img = Image.FromFile(tempPath);
-
-                fileIsOpen = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            }
-            
-            return fileIsOpen;
-        }
-
-        /// <summary>
         /// Gibt den DashType der einem übergebenen String entspricht zurück
         /// </summary>
         /// <param name="dashType">DashType als String</param>
         /// <returns>DashType als DashType</returns>
-        public DashType getDashType(string dashType)
+        private DashType GetDashType(string dashType)
         {
             DashType pattern = DashType.Solid;
 
@@ -131,6 +102,34 @@ namespace ProjektPaint
             }
 
             return pattern;
+        }
+
+        /// <summary>
+        /// List eine Bilddatei ein
+        /// </summary>
+        /// <param name="img">Das Bild wird daring gespeichert</param>
+        /// <param name="path">Der Pfad zum zu öffnenden Bild</param>
+        /// <returns></returns>
+        public bool OpenImage(ref Image img, string path)
+        {
+            bool fileIsOpen = false;
+
+            try
+            {
+                FileInfo fileInfo = new FileInfo(path);
+                string tempPath = SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension;
+                File.Copy(path, tempPath, true);
+
+                img = Image.FromFile(tempPath);
+
+                fileIsOpen = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Fehler beim Einlesen der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
+            
+            return fileIsOpen;
         }
 
         /// <summary>
@@ -149,7 +148,7 @@ namespace ProjektPaint
                 {
                     if (!File.Exists(path))
                     {
-                        //Wenn die Datei nicht existiert, erstelle sie
+                        //Wenn die Datei nicht existiert, wird eine neue erstellt
                         File.Create(path).Close();
                     }
 
@@ -251,7 +250,7 @@ namespace ProjektPaint
                     }
                     else if (sfd.FileName.Contains(".png"))
                     {
-                        ConvertAndExport(bmp, sfd.FileName, ImageFormat.Png, 100L);
+                        ConvertAndExport(bmp, sfd.FileName, ImageFormat.Png, 200L);
                     }
                     else if (sfd.FileName.Contains(".bmp"))
                     {
@@ -291,8 +290,10 @@ namespace ProjektPaint
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\nHinweis: Das Bild kann nicht in dieselbe Datei gespeichert werden, aus der es erstellt wurde.\nSpeichern Sie das Bild unter einem anderen Pfad.", "Fehler beim Speichern der Datei", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBox.Show(ex.Message + "\nHinweis: Das Bild kann nicht in dieselbe Datei gespeichert werden, aus der es erstellt wurde.\nSpeichern Sie das Bild unter einem anderen Pfad.", "Fehler beim Exportieren", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+
+            myEncoderParameters.Dispose();
 
             return exportSuccessful;
         }

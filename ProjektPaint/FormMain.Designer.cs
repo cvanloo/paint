@@ -129,7 +129,7 @@ namespace ProjektPaint
             this.mtbFrameThickness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mtbFrameThickness.ForeColor = System.Drawing.Color.White;
             this.mtbFrameThickness.HidePromptOnLeave = true;
-            this.mtbFrameThickness.Location = new System.Drawing.Point(656, 2);
+            this.mtbFrameThickness.Location = new System.Drawing.Point(667, 2);
             this.mtbFrameThickness.Mask = "00";
             this.mtbFrameThickness.Name = "mtbFrameThickness";
             this.mtbFrameThickness.Size = new System.Drawing.Size(75, 20);
@@ -149,6 +149,7 @@ namespace ProjektPaint
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 49);
             this.panel2.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.panel2, "Muster der Form und des Rahmens");
             // 
             // labelDashStyle
             // 
@@ -215,7 +216,7 @@ namespace ProjektPaint
             this.btnRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRedo.ForeColor = System.Drawing.Color.SlateBlue;
             this.btnRedo.Image = ((System.Drawing.Image)(resources.GetObject("btnRedo.Image")));
-            this.btnRedo.Location = new System.Drawing.Point(923, 16);
+            this.btnRedo.Location = new System.Drawing.Point(934, 16);
             this.btnRedo.Name = "btnRedo";
             this.btnRedo.Size = new System.Drawing.Size(58, 23);
             this.btnRedo.TabIndex = 17;
@@ -230,7 +231,7 @@ namespace ProjektPaint
             this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUndo.ForeColor = System.Drawing.Color.SlateBlue;
             this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
-            this.btnUndo.Location = new System.Drawing.Point(859, 16);
+            this.btnUndo.Location = new System.Drawing.Point(870, 16);
             this.btnUndo.Name = "btnUndo";
             this.btnUndo.Size = new System.Drawing.Size(58, 23);
             this.btnUndo.TabIndex = 16;
@@ -246,9 +247,9 @@ namespace ProjektPaint
             this.cbFrameOuter.ForeColor = System.Drawing.Color.White;
             this.cbFrameOuter.Location = new System.Drawing.Point(603, 11);
             this.cbFrameOuter.Name = "cbFrameOuter";
-            this.cbFrameOuter.Size = new System.Drawing.Size(52, 17);
+            this.cbFrameOuter.Size = new System.Drawing.Size(61, 17);
             this.cbFrameOuter.TabIndex = 15;
-            this.cbFrameOuter.Text = "Outer";
+            this.cbFrameOuter.Text = "Aussen";
             this.toolTip1.SetToolTip(this.cbFrameOuter, "Rahmen Aussen");
             this.cbFrameOuter.UseVisualStyleBackColor = false;
             this.cbFrameOuter.CheckStateChanged += new System.EventHandler(this.cb_frame_O_CheckStateChanged);
@@ -260,9 +261,9 @@ namespace ProjektPaint
             this.cbFrameInner.ForeColor = System.Drawing.Color.White;
             this.cbFrameInner.Location = new System.Drawing.Point(603, 32);
             this.cbFrameInner.Name = "cbFrameInner";
-            this.cbFrameInner.Size = new System.Drawing.Size(50, 17);
+            this.cbFrameInner.Size = new System.Drawing.Size(53, 17);
             this.cbFrameInner.TabIndex = 14;
-            this.cbFrameInner.Text = "Inner";
+            this.cbFrameInner.Text = "Innen";
             this.toolTip1.SetToolTip(this.cbFrameInner, "Rahmen Innen");
             this.cbFrameInner.UseVisualStyleBackColor = false;
             this.cbFrameInner.CheckStateChanged += new System.EventHandler(this.cb_frame_I_CheckStateChanged);
@@ -273,7 +274,7 @@ namespace ProjektPaint
             this.btnColFrame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColFrame.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColFrame.ForeColor = System.Drawing.Color.White;
-            this.btnColFrame.Location = new System.Drawing.Point(656, 25);
+            this.btnColFrame.Location = new System.Drawing.Point(667, 25);
             this.btnColFrame.Margin = new System.Windows.Forms.Padding(0);
             this.btnColFrame.Name = "btnColFrame";
             this.btnColFrame.Size = new System.Drawing.Size(75, 23);
@@ -285,7 +286,7 @@ namespace ProjektPaint
             // cbFill
             // 
             this.cbFill.AutoSize = true;
-            this.cbFill.Location = new System.Drawing.Point(749, 21);
+            this.cbFill.Location = new System.Drawing.Point(760, 21);
             this.cbFill.Name = "cbFill";
             this.cbFill.Size = new System.Drawing.Size(15, 14);
             this.cbFill.TabIndex = 12;
@@ -298,7 +299,7 @@ namespace ProjektPaint
             this.btnColFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColFill.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColFill.ForeColor = System.Drawing.Color.Black;
-            this.btnColFill.Location = new System.Drawing.Point(766, 16);
+            this.btnColFill.Location = new System.Drawing.Point(777, 16);
             this.btnColFill.Name = "btnColFill";
             this.btnColFill.Size = new System.Drawing.Size(75, 23);
             this.btnColFill.TabIndex = 11;
@@ -384,7 +385,7 @@ namespace ProjektPaint
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.WindowText;
+            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.splitContainer1.Panel2.Controls.Add(this.labelisSave);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
@@ -494,9 +495,9 @@ namespace ProjektPaint
             // labelisSave
             // 
             this.labelisSave.AutoSize = true;
-            this.labelisSave.BackColor = System.Drawing.Color.White;
+            this.labelisSave.BackColor = System.Drawing.Color.Black;
             this.labelisSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelisSave.ForeColor = System.Drawing.Color.Black;
+            this.labelisSave.ForeColor = System.Drawing.Color.White;
             this.labelisSave.Location = new System.Drawing.Point(4, 3);
             this.labelisSave.Name = "labelisSave";
             this.labelisSave.Size = new System.Drawing.Size(109, 15);

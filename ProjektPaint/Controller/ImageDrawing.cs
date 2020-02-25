@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 using ProjektPaint.Model;
 
 namespace ProjektPaint
@@ -92,7 +90,7 @@ namespace ProjektPaint
         /// <param name="endPoint">Endpunkt der zu zeichnenden Form</param>
         /// <param name="hasEqualLengthAndWidth">Hat die Form gleiche Länge und Breite?</param>
         /// <returns></returns>
-        public int[] convertPointsToLengthAndWidth(Point startPoint, Point endPoint, bool hasEqualLengthAndWidth)
+        public int[] ConvertPointsToLengthAndWidth(Point startPoint, Point endPoint, bool hasEqualLengthAndWidth)
         {
             int startX = 0;
             int startY = 0;

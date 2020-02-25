@@ -78,7 +78,7 @@
             // 
             // cbJpegQuality
             // 
-            this.cbJpegQuality.BackColor = System.Drawing.SystemColors.WindowText;
+            this.cbJpegQuality.BackColor = System.Drawing.Color.Black;
             this.cbJpegQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbJpegQuality.ForeColor = System.Drawing.Color.LightGreen;
             this.cbJpegQuality.FormattingEnabled = true;
@@ -141,9 +141,9 @@
             // 
             // pbExportIcon
             // 
-            this.pbExportIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbExportIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pbExportIcon.Image = ((System.Drawing.Image)(resources.GetObject("pbExportIcon.Image")));
             this.pbExportIcon.Location = new System.Drawing.Point(46, 41);
             this.pbExportIcon.Name = "pbExportIcon";

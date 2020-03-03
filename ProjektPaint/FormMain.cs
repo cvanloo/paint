@@ -648,7 +648,9 @@ namespace ProjektPaint
             else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.E))
             {
                 //Shortcut Exportieren Als..
-                fop.ExportAs(bmp);
+                ExportForm expForm = new ExportForm(bmp);
+                expForm.ShowDialog();
+                expForm.Dispose();
             }
 
             //Bild neu zeichnen
@@ -662,7 +664,9 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void tsmiExportAs_Click(object sender, EventArgs e)
         {
-            fop.ExportAs(bmp);
+            ExportForm expForm = new ExportForm(bmp);
+            expForm.ShowDialog();
+            expForm.Dispose();
         }
 
         private bool showOpener = false;
@@ -732,6 +736,7 @@ namespace ProjektPaint
 
             if (img == null)
             {
+                //Als CSV speichern
                 sfd.Filter = "Projekt Paint (*.prjp)|*.prjp";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
@@ -741,6 +746,7 @@ namespace ProjektPaint
             }
             else
             {
+                //Als Bilddatei speichern
                 sfd.Filter = "Alle Bilddateien|*.png;*.jpg;*.bmp";
 
                 if(sfd.ShowDialog() == DialogResult.OK)
@@ -780,7 +786,8 @@ namespace ProjektPaint
                     }
                 }
 
-                //Datei Öffnen
+                /*Datei Öffnen*/
+
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp" +
                     "| Projekt Paint (*.prjp)|*.prjp" +
@@ -791,6 +798,7 @@ namespace ProjektPaint
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     listForms.Clear(); //Liste leeren
+                    redoForms.Clear();
 
                     if (img != null) //Image leeren
                     {
@@ -821,9 +829,9 @@ namespace ProjektPaint
 
                     if (isSaved)
                     {
-                        //Öffnen erfolgreich
                         path = ofd.FileName;
                         labelisSave.Text = "Keine Änderungen";
+
                         AdjustBmp();
                     }
                 }
@@ -855,8 +863,10 @@ namespace ProjektPaint
                     }
                 }
 
-                //Neues Bild
-                listForms.Clear();
+                /*Neues Bild*/
+
+                listForms.Clear(); //Liste leeren
+                redoForms.Clear();
 
                 if (img != null) //Image leeren
                 {
@@ -878,6 +888,7 @@ namespace ProjektPaint
 
                 isSaved = true;
                 labelisSave.Text = "Keine Änderungen";
+
                 AdjustBmp();
             }
         }

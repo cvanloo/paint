@@ -110,6 +110,7 @@ namespace ProjektPaint
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormStart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint v.1.0 - Startmenü";

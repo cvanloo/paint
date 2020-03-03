@@ -210,63 +210,6 @@ namespace ProjektPaint
             return toWriteText;
         }
 
-        /// <summary>
-        /// Exportieren des Bildes als PNG, JPEG oder BMP
-        /// </summary>
-        /// <param name="bmp">Zu exportierendes Bild</param>
-        public void ExportAs(Bitmap bmp)
-        {
-            bool repeatFunc = false;
-            do
-            {
-                //Dateiformat auswählen
-                ExportForm expForm = new ExportForm();
-                expForm.ShowDialog();
-
-                //Zu Exportierende Datei anwählen
-                SaveFileDialog sfd = new SaveFileDialog();
-                if (expForm.ChoiceFileFormat == FileFormat.PNG)
-                {
-                    sfd.Filter = "png (*.png)|*.png";
-                }
-                else if (expForm.ChoiceFileFormat == FileFormat.JPEG)
-                {
-                    sfd.Filter = "jpeg (*.jpeg)|*.jpeg";
-                }
-                else if (expForm.ChoiceFileFormat == FileFormat.BMP)
-                {
-                    sfd.Filter = "Bitmap (*.bmp)|*.bmp";
-                }
-                else
-                {
-                    return;
-                }
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    if (sfd.FileName.Contains(".jpeg"))
-                    {
-                        ConvertAndExport(bmp, sfd.FileName, ImageFormat.Jpeg, expForm.QualityIndex);
-                    }
-                    else if (sfd.FileName.Contains(".png"))
-                    {
-                        ConvertAndExport(bmp, sfd.FileName, ImageFormat.Png, 200L);
-                    }
-                    else if (sfd.FileName.Contains(".bmp"))
-                    {
-                        ConvertAndExport(bmp, sfd.FileName, ImageFormat.Bmp, 100L);
-                    }
-                }
-                else
-                {
-                    repeatFunc = true;
-                }
-
-                expForm.Dispose();
-            }
-            while (repeatFunc);
-        }
-
         public bool ConvertAndExport(Bitmap bmp, string path, ImageFormat imgFormat, long quality)
         {
             bool exportSuccessful = false;

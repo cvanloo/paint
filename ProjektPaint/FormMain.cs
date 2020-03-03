@@ -12,39 +12,35 @@ namespace ProjektPaint
 {
     public partial class FormMain : Form
     {
+        //Wird gebraucht, um das Bild zu zeichnen
+        private Graphics graphBMP;
+        private ImageDrawing imgDraw;
+
         //Bild wird in diese Bitmap gezeichnet
         private Bitmap bmp;
 
         //Strichdicke
-        private int thickness = 1;
+        private int thickness = 1; //Form
+        private int frameThickness = 1; //Rahmen
 
-        //Farbe Form
-        private Color colorForm = Color.Black;
-
-        //Farbe Rahmen Aussen und Innen
-        private Color colorFrameOut = Color.FromArgb(0, 0, 0, 0);
-        private Color colorFrameIn = Color.FromArgb(0, 0, 0, 0);
-
-        //Farbe Füllung
-        private Color colorFill = Color.FromArgb(0, 0, 0, 0);
+        //Farben
+        private Color colorForm = Color.Black; //Form
+        private Color colorFrameOut = Color.FromArgb(0, 0, 0, 0); //Rahmen Aussen
+        private Color colorFrameIn = Color.FromArgb(0, 0, 0, 0); //Rahmen Innen
+        private Color colorFill = Color.FromArgb(0, 0, 0, 0); //Füllung
 
         //Startpunkt der aktuellen Form
         private Point sPoint = new Point();
-        
+
+        //Alle Punkte eines Freehand-Objekts
+        private List<Point> freehandPoints = new List<Point>();
+
         //Muster
         private DashType pattern = DashType.Solid;
 
-        //Graphics um Zeichnung zu zeichnen
-        private Graphics graphBMP;
-
-        //Alle Formen werden darin gespeichert
-        private List<Shape> listForms = new List<Shape>();
-
-        //Mit Undo gelöschte Objekte werden daring gespeichert
-        private List<Shape> rForms = new List<Shape>();
-
-        //Alle Punkte eines Freehand-Objekts werden darin gespeichert
-        private List<Point> freehandPoints = new List<Point>();
+        //Alle Formen
+        private List<Shape> listForms = new List<Shape>(); //Werden gezeichnet
+        private List<Shape> redoForms = new List<Shape>(); //Werden nicht gezeichnet
 
         //Pfad der abgespeicherten Datei
         private string path = null;
@@ -52,19 +48,13 @@ namespace ProjektPaint
         //Gibt an, ob aktuell geöffnete Datei gespeichert ist
         private bool isSaved = true;
 
-        //Strichdicke des Rahmens
-        private int frameThickness = 1;
-
         //Gibt an, welche Form gezeichnet werden sollte
         private DrawShape selectedShape = DrawShape.Freehand; //Standard: Freehand
-
-        //Wird benutzt um in die Bitmap zu zeichnen
-        private ImageDrawing imgDraw;
 
         //Wird für Speichern/Öffnen und Exportieren gebraucht
         private FileOp fop;
 
-        //Bild wird darin gespeichert (Falls der Benutzer ein PNG/JPEG/BMP öffnet)
+        //Bilddatei (JPG/PNG/BMP)
         Image img;
 
         public FormMain(string newPath, List<Shape> newForm, Image newImage)
@@ -86,7 +76,7 @@ namespace ProjektPaint
         }
 
         /// <summary>
-        /// Wird aufgerufen wenn das Zeichnenfeld dargestellt wird. Dabei wird die Bitmap initialisiert.
+        /// Bild wird in Panel gezeichnet
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -111,14 +101,14 @@ namespace ProjektPaint
             //Bitmap auf Originalgrösse zurücksetzen
             bmp = new Bitmap(this.splitContainer1.Panel2.Width - 50, this.splitContainer1.Panel2.Height - 50);
             graphBMP = Graphics.FromImage(bmp);
-            imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp); //imgDraw mit neuer Bitmap initialisieren
+            imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
 
             if (img != null)
             {
                 //Bitmap an Grösse des geöffneten Bildes anpassen
                 bmp = new Bitmap(imgDraw.ConvertImageSize(img).Width, imgDraw.ConvertImageSize(img).Height);
                 graphBMP = Graphics.FromImage(bmp);
-                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp); //imgDraw mit abgeänderter Bitmap initialisieren
+                imgDraw = new ImageDrawing(graphBMP, splitContainer1, bmp);
             }
 
             //Zeichnen-Panel aktualisieren
@@ -155,9 +145,10 @@ namespace ProjektPaint
         /// <param name="e"></param>
         private void splitContainer1_Panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            //Maus wird bewegt
             if (e.Button == MouseButtons.Left)
             {
+                /*Maus wird bewegt und Linke Taste gedrückt*/
+
                 Point ePoint = new Point(e.X, e.Y);
 
                 createNewShape(ePoint);
@@ -256,7 +247,7 @@ namespace ProjektPaint
         }
 
         /// <summary>
-        /// Event der aufgerufen wird, wenn einer der Shape-Buttons geklickt wird
+        /// Event wird aufgerufen, wenn einer der Shape-Buttons geklickt wird
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -517,7 +508,7 @@ namespace ProjektPaint
                 if (listForms.Count > 0)
                 {
                     //Letzen Schritt rückgängig machen
-                    imgDraw.Undo(ref listForms, ref rForms);
+                    imgDraw.Undo(ref listForms, ref redoForms);
 
                     isSaved = false;
                     labelisSave.Text = "Ungespeichert";
@@ -525,10 +516,10 @@ namespace ProjektPaint
             }
             else if (sender == btnRedo)
             {
-                if (rForms.Count > 0)
+                if (redoForms.Count > 0)
                 {
                     //Zuletzt rückgängig gemachter Schritt wiederherstellen
-                    imgDraw.Redo(ref listForms, ref rForms);
+                    imgDraw.Redo(ref listForms, ref redoForms);
 
                     isSaved = false;
                     labelisSave.Text = "Ungespeichert";
@@ -583,10 +574,9 @@ namespace ProjektPaint
                 img = null;
             }
 
-            FileInfo fileInfo;
             if (path != null)
             {
-                fileInfo = new FileInfo(path);
+                FileInfo fileInfo = new FileInfo(path);
 
                 if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
                 {
@@ -638,7 +628,7 @@ namespace ProjektPaint
                 //Shortcut Undo
                 if (listForms.Count > 0)
                 {
-                    imgDraw.Undo(ref listForms, ref rForms);
+                    imgDraw.Undo(ref listForms, ref redoForms);
 
                     isSaved = false;
                     labelisSave.Text = "Ungespeichert";
@@ -647,9 +637,9 @@ namespace ProjektPaint
             else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Z) || e.KeyData == (Keys.Control | Keys.Y))
             {
                 //Shortcut Redo
-                if (rForms.Count > 0)
+                if (redoForms.Count > 0)
                 {
-                    imgDraw.Redo(ref listForms, ref rForms);
+                    imgDraw.Redo(ref listForms, ref redoForms);
                     
                     isSaved = false;
                     labelisSave.Text = "Ungespeichert";

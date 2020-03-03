@@ -6,8 +6,8 @@ namespace ProjektPaint
 {
     public partial class ExportForm : Form
     {
-        private long qualityIndex;
-        private FileFormat choiceFileFormat;
+        private long qualityIndex = 100L;
+        private FileFormat choiceFileFormat = FileFormat.PNG;
 
         public long QualityIndex
         {

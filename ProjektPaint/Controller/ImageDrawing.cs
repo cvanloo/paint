@@ -100,7 +100,6 @@ namespace ProjektPaint
             int height = 0;
 
             //Startpunkt berechnen, Endpunkt wird nur für die Längen- und Breitenberechnung gebraucht
-            //Für Rechteck
             if (startPoint.X < endPoint.X)
             {
                 startX = startPoint.X;

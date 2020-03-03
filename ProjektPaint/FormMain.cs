@@ -583,10 +583,15 @@ namespace ProjektPaint
                 img = null;
             }
 
-            FileInfo fileInfo = new FileInfo(path);
-            if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
+            FileInfo fileInfo;
+            if (path != null)
             {
-                File.Delete(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension);
+                fileInfo = new FileInfo(path);
+
+                if (File.Exists(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension))
+                {
+                    File.Delete(SpecialDirectories.Temp + "\\tempPicture" + fileInfo.Extension);
+                }
             }
 
             if (showOpener)

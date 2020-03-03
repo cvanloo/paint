@@ -758,31 +758,29 @@ namespace ProjektPaint
             }
         }
 
-        /// <summary>
-        /// Öffnet eine Datei
-        /// </summary>
         private void OpenFile()
         {
-            DialogResult result = new DialogResult();
+            DialogResult result = DialogResult.No;
 
             if (!isSaved)
             {
                 result = MessageBox.Show("Möchten Sie die Datei speichern?", "Datei Ungespeichert", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-
-                if (result == DialogResult.Yes)
-                {
-                    //Speichern aufrufen
-                    SaveFile();
-
-                    if (!isSaved)
-                    {
-                        result = DialogResult.Cancel;
-                    }
-                }
             }
 
             if (result != DialogResult.Cancel)
             {
+                if (result == DialogResult.Yes)
+                {
+                    //Datei Speichern
+                    SaveFile();
+
+                    if(!isSaved)
+                    {
+                        return;
+                    }
+                }
+
+                //Datei Öffnen
                 OpenFileDialog ofd = new OpenFileDialog();
                 ofd.Filter = "Alle Dateien|*.prjp;*.jpg;*.png;*.bmp" +
                     "| Projekt Paint (*.prjp)|*.prjp" +
@@ -794,10 +792,10 @@ namespace ProjektPaint
                 {
                     listForms.Clear(); //Liste leeren
 
-                    if(img != null) //Image leeren
+                    if (img != null) //Image leeren
                     {
                         img.Dispose();
-                        img = null;
+                        img = null; //Dispose beschleunigen
                     }
 
                     //Temporäre Datei löschen, falls vorhanden
@@ -812,12 +810,12 @@ namespace ProjektPaint
 
                     if (Path.GetExtension(ofd.FileName) == ".prjp")
                     {
-                        //Einlesen CSV
+                        /*Einlesen CSV*/
                         isSaved = fop.OpenFile(ref listForms, ofd.FileName);
                     }
                     else
                     {
-                        //Einlesen Image (PNG/JPEG/BMP)
+                        /*Einlesen Image (PNG/JPEG/BMP)*/
                         isSaved = fop.OpenImage(ref img, ofd.FileName);
                     }
 
@@ -837,32 +835,33 @@ namespace ProjektPaint
         /// </summary>
         private void NewFile()
         {
-            DialogResult result = new DialogResult();
+            DialogResult result = DialogResult.No;
 
             if (!isSaved)
             {
                 result = MessageBox.Show("Möchten Sie die Datei speichern?", "Datei Ungespeichert", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            }
 
+            if (result != DialogResult.Cancel)
+            {
                 if (result == DialogResult.Yes)
                 {
                     //Speichern aufrufen
                     SaveFile();
 
-                    if (!isSaved)
+                    if(!isSaved)
                     {
-                        result = DialogResult.Cancel;
+                        return;
                     }
                 }
-            }
 
-            if (result != DialogResult.Cancel)
-            {
+                //Neues Bild
                 listForms.Clear();
 
                 if (img != null) //Image leeren
                 {
                     img.Dispose();
-                    img = null;
+                    img = null; //Dispose beschleunigen
                 }
 
                 //Temporäre Datei löschen, falls vorhanden

@@ -2,21 +2,20 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
-using ProjektPaint.Model.Enums;
 
 namespace ProjektPaint
 {
     public partial class ExportForm : Form
     {
-        private long qualityIndex = 100L;
         private Bitmap Bmp;
+        private long qualityIndex = 100L;
 
         public ExportForm(Bitmap bmp)
         {
             InitializeComponent();
 
-            cbJpegQuality.SelectedIndex = 1;
             this.Bmp = bmp;
+            cbJpegQuality.SelectedIndex = 1;
         }
 
         /// <summary>

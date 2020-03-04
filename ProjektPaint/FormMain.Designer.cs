@@ -540,7 +540,9 @@ namespace ProjektPaint
             this.tsmiNew.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiNew.ForeColor = System.Drawing.Color.Black;
             this.tsmiNew.Name = "tsmiNew";
-            this.tsmiNew.Size = new System.Drawing.Size(196, 24);
+            this.tsmiNew.ShortcutKeyDisplayString = "ctrl+shift+n";
+            this.tsmiNew.Size = new System.Drawing.Size(282, 24);
+            this.tsmiNew.Tag = "";
             this.tsmiNew.Text = "Neu";
             this.tsmiNew.Click += new System.EventHandler(this.neuToolStripMenuItem_Click);
             // 
@@ -550,7 +552,8 @@ namespace ProjektPaint
             this.tsmiOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tsmiOpen.ForeColor = System.Drawing.Color.Black;
             this.tsmiOpen.Name = "tsmiOpen";
-            this.tsmiOpen.Size = new System.Drawing.Size(196, 24);
+            this.tsmiOpen.ShortcutKeyDisplayString = "ctrl+shift+o";
+            this.tsmiOpen.Size = new System.Drawing.Size(282, 24);
             this.tsmiOpen.Text = "Öffnen";
             this.tsmiOpen.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
@@ -559,7 +562,8 @@ namespace ProjektPaint
             this.tsmiSave.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiSave.ForeColor = System.Drawing.Color.Black;
             this.tsmiSave.Name = "tsmiSave";
-            this.tsmiSave.Size = new System.Drawing.Size(196, 24);
+            this.tsmiSave.ShortcutKeyDisplayString = "ctrl+s";
+            this.tsmiSave.Size = new System.Drawing.Size(282, 24);
             this.tsmiSave.Text = "Speichern";
             this.tsmiSave.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
             // 
@@ -568,7 +572,8 @@ namespace ProjektPaint
             this.tsmiSaveUnder.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiSaveUnder.ForeColor = System.Drawing.Color.Black;
             this.tsmiSaveUnder.Name = "tsmiSaveUnder";
-            this.tsmiSaveUnder.Size = new System.Drawing.Size(196, 24);
+            this.tsmiSaveUnder.ShortcutKeyDisplayString = "ctrl+shift+s";
+            this.tsmiSaveUnder.Size = new System.Drawing.Size(282, 24);
             this.tsmiSaveUnder.Text = "Speichern Unter";
             this.tsmiSaveUnder.Click += new System.EventHandler(this.mnuSaveUnder_Click);
             // 
@@ -577,7 +582,8 @@ namespace ProjektPaint
             this.tsmiExportAs.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiExportAs.ForeColor = System.Drawing.Color.Black;
             this.tsmiExportAs.Name = "tsmiExportAs";
-            this.tsmiExportAs.Size = new System.Drawing.Size(196, 24);
+            this.tsmiExportAs.ShortcutKeyDisplayString = "ctrl+shift+e";
+            this.tsmiExportAs.Size = new System.Drawing.Size(282, 24);
             this.tsmiExportAs.Text = "Exportieren als.. >";
             this.tsmiExportAs.Click += new System.EventHandler(this.tsmiExportAs_Click);
             // 

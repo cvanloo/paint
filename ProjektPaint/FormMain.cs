@@ -116,6 +116,21 @@ namespace ProjektPaint
         }
 
         /// <summary>
+        /// Ändert den Text in der Titelleiste
+        /// </summary>
+        /// <param name="message">Text wird in die Titelleiste geschrieben</param>
+        private void saveLabelStatus(string message)
+        {
+            string[] textPath = { "Paint 1.0" };
+            if (path != null)
+            {
+                textPath = path.Split('\\');
+            }
+
+            this.Text = textPath[textPath.Length - 1] + " - " + message;
+        }
+
+        /// <summary>
         /// Wird aufgerufen wenn eine Maustaste gedrückt wird
         /// </summary>
         /// <param name="sender"></param>
@@ -172,7 +187,8 @@ namespace ProjektPaint
 
             imgDraw.DrawImage(listForms, img);
             isSaved = false;
-            labelisSave.Text = "Ungespeichert";
+
+            saveLabelStatus("Ungespeichert");
 
             //FreeHand-Liste löschen
             freehandPoints.Clear();
@@ -511,7 +527,8 @@ namespace ProjektPaint
                     imgDraw.Undo(ref listForms, ref redoForms);
 
                     isSaved = false;
-                    labelisSave.Text = "Ungespeichert";
+
+                    saveLabelStatus("Ungespeichert");
                 }
             }
             else if (sender == btnRedo)
@@ -522,7 +539,8 @@ namespace ProjektPaint
                     imgDraw.Redo(ref listForms, ref redoForms);
 
                     isSaved = false;
-                    labelisSave.Text = "Ungespeichert";
+
+                    saveLabelStatus("Ungespeichert");
                 }
             }
 
@@ -631,7 +649,8 @@ namespace ProjektPaint
                     imgDraw.Undo(ref listForms, ref redoForms);
 
                     isSaved = false;
-                    labelisSave.Text = "Ungespeichert";
+
+                    saveLabelStatus("Ungespeichert");
                 }
             }
             else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.Z) || e.KeyData == (Keys.Control | Keys.Y))
@@ -642,7 +661,8 @@ namespace ProjektPaint
                     imgDraw.Redo(ref listForms, ref redoForms);
                     
                     isSaved = false;
-                    labelisSave.Text = "Ungespeichert";
+
+                    saveLabelStatus("Ungespeichert");
                 }
             }
             else if (e.KeyData == (Keys.Control | Keys.Shift | Keys.E))
@@ -722,7 +742,7 @@ namespace ProjektPaint
 
             if (isSaved)
             {
-                labelisSave.Text = "Gespeichert";
+                saveLabelStatus("Gespeichert");
             }
             else
             {
@@ -747,7 +767,9 @@ namespace ProjektPaint
             else
             {
                 //Als Bilddatei speichern
-                sfd.Filter = "Alle Bilddateien|*.png;*.jpg;*.bmp";
+                sfd.Filter = "png (*.png)|*.png" +
+                    "| jpg (*.jpg)|*.jpg" +
+                    "| Bitmap (*.bmp)|*.bmp";
 
                 if(sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -760,7 +782,8 @@ namespace ProjektPaint
             if (isSaved)
             {
                 path = sfd.FileName;
-                labelisSave.Text = "Gespeichert";
+
+                saveLabelStatus("Gespeichert");
             }
         }
 
@@ -830,7 +853,8 @@ namespace ProjektPaint
                     if (isSaved)
                     {
                         path = ofd.FileName;
-                        labelisSave.Text = "Keine Änderungen";
+
+                        saveLabelStatus("Keine Änderungen");
 
                         AdjustBmp();
                     }
@@ -887,7 +911,9 @@ namespace ProjektPaint
                 path = null;
 
                 isSaved = true;
-                labelisSave.Text = "Keine Änderungen";
+
+                saveLabelStatus("Keine Änderungen");
+
 
                 AdjustBmp();
             }

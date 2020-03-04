@@ -26,7 +26,7 @@ namespace ProjektPaint
         /// <param name="fElement">Beinhaltet alle zu zeichnenden Formen</param>
         public void DrawImage(List<Shape> fElement, Image img)
         {
-            //Bild leeren
+            //Ganze Bitmap weiss zeichnen
             Grphx.FillRectangle(Brushes.White, 0, 0, SplitCon.Panel2.Width, SplitCon.Panel2.Height);
 
             if (img != null)

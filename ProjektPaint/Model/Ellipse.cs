@@ -56,7 +56,7 @@ namespace ProjektPaint.Model
             data += this.ColorFrameOut.ToArgb() + ";";
             data += this.ColorFrameIn.ToArgb() + ";";
             data += this.FrameThickness + ";";
-
+            
             return data;
         }
     }

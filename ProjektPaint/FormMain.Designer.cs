@@ -57,7 +57,6 @@ namespace ProjektPaint
             this.btnSquare = new System.Windows.Forms.Button();
             this.btnRectangle = new System.Windows.Forms.Button();
             this.btnFreehand = new System.Windows.Forms.Button();
-            this.labelisSave = new System.Windows.Forms.Label();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.tsmiMenue = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +74,6 @@ namespace ProjektPaint
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFormThickness)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -386,14 +384,13 @@ namespace ProjektPaint
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.splitContainer1.Panel2.Controls.Add(this.labelisSave);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseDown);
             this.splitContainer1.Panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseMove);
             this.splitContainer1.Panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_Panel2_MouseUp);
             this.splitContainer1.Size = new System.Drawing.Size(1073, 516);
-            this.splitContainer1.SplitterDistance = 83;
+            this.splitContainer1.SplitterDistance = 81;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnEllipse
@@ -491,18 +488,6 @@ namespace ProjektPaint
             this.toolTip1.SetToolTip(this.btnFreehand, "Freihand");
             this.btnFreehand.UseVisualStyleBackColor = false;
             this.btnFreehand.Click += new System.EventHandler(this.btnShape_Click);
-            // 
-            // labelisSave
-            // 
-            this.labelisSave.AutoSize = true;
-            this.labelisSave.BackColor = System.Drawing.Color.Black;
-            this.labelisSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelisSave.ForeColor = System.Drawing.Color.White;
-            this.labelisSave.Location = new System.Drawing.Point(4, 3);
-            this.labelisSave.Name = "labelisSave";
-            this.labelisSave.Size = new System.Drawing.Size(109, 15);
-            this.labelisSave.TabIndex = 0;
-            this.labelisSave.Text = "Keine Änderungen";
             // 
             // menuStrip
             // 
@@ -619,7 +604,7 @@ namespace ProjektPaint
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Paint v.1.0 - Zeichnungsprogramm";
+            this.Text = "Paint 1.0 - Keine Änderungen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
@@ -635,8 +620,6 @@ namespace ProjektPaint
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarFormThickness)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             this.splitContainer1.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -668,7 +651,6 @@ namespace ProjektPaint
         private System.Windows.Forms.Button btnUndo;
         private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.ToolStripMenuItem tsmiExportAs;
-        private System.Windows.Forms.Label labelisSave;
         private System.Windows.Forms.Button btnFreehand;
         private System.Windows.Forms.Button btnCircle;
         private System.Windows.Forms.Button btnRectangle;

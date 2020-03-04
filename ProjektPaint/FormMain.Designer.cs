@@ -539,6 +539,7 @@ namespace ProjektPaint
             // 
             this.tsmiNew.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiNew.ForeColor = System.Drawing.Color.Black;
+            this.tsmiNew.Image = global::ProjektPaint.Properties.Resources.Add_New;
             this.tsmiNew.Name = "tsmiNew";
             this.tsmiNew.ShortcutKeyDisplayString = "ctrl+shift+n";
             this.tsmiNew.Size = new System.Drawing.Size(282, 24);
@@ -551,6 +552,7 @@ namespace ProjektPaint
             this.tsmiOpen.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiOpen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tsmiOpen.ForeColor = System.Drawing.Color.Black;
+            this.tsmiOpen.Image = global::ProjektPaint.Properties.Resources.Open3;
             this.tsmiOpen.Name = "tsmiOpen";
             this.tsmiOpen.ShortcutKeyDisplayString = "ctrl+shift+o";
             this.tsmiOpen.Size = new System.Drawing.Size(282, 24);
@@ -561,6 +563,7 @@ namespace ProjektPaint
             // 
             this.tsmiSave.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiSave.ForeColor = System.Drawing.Color.Black;
+            this.tsmiSave.Image = global::ProjektPaint.Properties.Resources.Save_01;
             this.tsmiSave.Name = "tsmiSave";
             this.tsmiSave.ShortcutKeyDisplayString = "ctrl+s";
             this.tsmiSave.Size = new System.Drawing.Size(282, 24);
@@ -571,6 +574,7 @@ namespace ProjektPaint
             // 
             this.tsmiSaveUnder.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiSaveUnder.ForeColor = System.Drawing.Color.Black;
+            this.tsmiSaveUnder.Image = global::ProjektPaint.Properties.Resources.Save_As;
             this.tsmiSaveUnder.Name = "tsmiSaveUnder";
             this.tsmiSaveUnder.ShortcutKeyDisplayString = "ctrl+shift+s";
             this.tsmiSaveUnder.Size = new System.Drawing.Size(282, 24);
@@ -581,6 +585,7 @@ namespace ProjektPaint
             // 
             this.tsmiExportAs.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiExportAs.ForeColor = System.Drawing.Color.Black;
+            this.tsmiExportAs.Image = global::ProjektPaint.Properties.Resources.Export_02_WF;
             this.tsmiExportAs.Name = "tsmiExportAs";
             this.tsmiExportAs.ShortcutKeyDisplayString = "ctrl+shift+e";
             this.tsmiExportAs.Size = new System.Drawing.Size(282, 24);
@@ -591,8 +596,9 @@ namespace ProjektPaint
             // 
             this.tsmiStartmenue.BackColor = System.Drawing.SystemColors.Control;
             this.tsmiStartmenue.ForeColor = System.Drawing.Color.Black;
+            this.tsmiStartmenue.Image = global::ProjektPaint.Properties.Resources.House_09;
             this.tsmiStartmenue.Name = "tsmiStartmenue";
-            this.tsmiStartmenue.Size = new System.Drawing.Size(196, 24);
+            this.tsmiStartmenue.Size = new System.Drawing.Size(282, 24);
             this.tsmiStartmenue.Text = "Startmenü";
             this.tsmiStartmenue.Click += new System.EventHandler(this.tsmiStartmenue_Click);
             // 

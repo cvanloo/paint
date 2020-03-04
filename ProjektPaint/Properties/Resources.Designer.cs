@@ -63,6 +63,16 @@ namespace ProjektPaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_New {
+            get {
+                object obj = ResourceManager.GetObject("Add-New", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_WF {
             get {
                 object obj = ResourceManager.GetObject("Close_WF", resourceCulture);
@@ -86,6 +96,16 @@ namespace ProjektPaint.Properties {
         internal static System.Drawing.Bitmap Data_Export1 {
             get {
                 object obj = ResourceManager.GetObject("Data_Export1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Data_Export2 {
+            get {
+                object obj = ResourceManager.GetObject("Data-Export2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +183,16 @@ namespace ProjektPaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Export_02_WF {
+            get {
+                object obj = ResourceManager.GetObject("Export-02-WF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap File_Format_BitMap {
             get {
                 object obj = ResourceManager.GetObject("File_Format_BitMap", resourceCulture);
@@ -196,6 +226,16 @@ namespace ProjektPaint.Properties {
         internal static System.Drawing.Bitmap format_color_fill {
             get {
                 object obj = ResourceManager.GetObject("format_color_fill", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap House_09 {
+            get {
+                object obj = ResourceManager.GetObject("House-09", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,6 +353,36 @@ namespace ProjektPaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Open2 {
+            get {
+                object obj = ResourceManager.GetObject("Open2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Open3 {
+            get {
+                object obj = ResourceManager.GetObject("Open3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Open31 {
+            get {
+                object obj = ResourceManager.GetObject("Open31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pen_Line__WF {
             get {
                 object obj = ResourceManager.GetObject("Pen_Line__WF", resourceCulture);
@@ -406,6 +476,26 @@ namespace ProjektPaint.Properties {
         internal static System.Drawing.Bitmap redo1 {
             get {
                 object obj = ResourceManager.GetObject("redo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_01 {
+            get {
+                object obj = ResourceManager.GetObject("Save-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_As {
+            get {
+                object obj = ResourceManager.GetObject("Save As", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -215,6 +215,14 @@
     <None Include="Resources\Shape18-WF.png" />
     <None Include="Resources\Data-Export.ico" />
     <None Include="Resources\Data-Export.png" />
+    <None Include="Resources\Add-New.png" />
+    <None Include="Resources\Open2.png" />
+    <None Include="Resources\Open3.png" />
+    <None Include="Resources\Save-01.png" />
+    <None Include="Resources\Save As.png" />
+    <None Include="Resources\Data-Export2.png" />
+    <None Include="Resources\Export-02-WF.png" />
+    <None Include="Resources\House-09.png" />
     <Content Include="Resources\startbild.bmp" />
     <None Include="Resources\startbild2.1.bmp" />
     <None Include="Resources\startbild2.bmp" />
